@@ -12,6 +12,129 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
-    </body>
+      <section id="title_page">
+        <h1>Tic Tac Toe</h1>
+        <h3>Instructions</h3>
+        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum.</p>
+        <ul class='authenticate'>
+          <li><a href='#sign_up'>Sign Up</a></li>
+          <li><a href='#sign_in'>Sign In</a></li>
+        </ul>
+        <a href="#about-contact">About Us/Contact</a>
+      </section>
+
+      <form id='sign-up' class='border'>
+        <fieldset class='form'>
+          <legend>Sign Up:</legend>
+          <p class='message'></p>
+          <label>Name: </label>
+            <input type='name' name='MIRROR[API DATA]' placeholder='First Last'>
+          <label>Email: </label>
+            <input type='email' name='MIRROR[API DATA]' placeholder="name@webaddress.com">
+          <label>Password: </label>
+            <input type='password' name='MIRROR[API DATA]'>
+          <label>Confirm Password: </label>
+            <input type='password' name='MIRROR[API DATA]'>
+          <input class='submit' type='submit' name='submit' value='Submit'>
+        </fieldset>
+      </form>
+
+      <form id='sign-in' class='border'>
+        <fieldset class='form'>
+          <legend>Sign In:</legend>
+          <p class='message'></p>
+          <label>Email: </label>
+            <input type='email' name='MIRROR[API DATA]' placeholder="name@webaddress.com">
+          <label>Password: </label>
+            <input type='password' name='MIRROR[API DATA]'>
+          <input class='submit' type='submit' name='submit' value='Submit'>
+        </fieldset>
+      </form>
+
+      <section id="game" class='hidden'>
+        <h2>Tic Tac Toe</h2>
+        <nav>
+          <ul>
+            <li><a href="#about-contact">About Us</a></li>
+            <li><a href="#about-contact">Contact</a></li>
+            <li><a href="#change-password">Change Password</a></li>
+            <li><a href="#" class='hidden'>Quit Game</a></li>
+            <li><a href='#sign-out'>Sign Out</a></li>
+          </ul>
+        </nav>
+        <div id='display'>
+          <form id="game-start">
+            <legend>Let's Play!</legend>
+            <label>Pick a symbol:</label>
+              <input> // DROP DOWN MENU?
+            <label>Difficulty Level</label>
+              <input> // DROP DOWN MENU?
+            <input class='submit' type='submit' name='submit' value='START'>
+          </form>
+          <div id="game-board"> // HOW TO ADJUST #OF TILES?
+            <div class='square'></div>
+            <div class='square'></div>
+            <div class='square'></div>
+            <div class='square'></div>
+            <div class='square'></div>
+            <div class='square'></div>
+            <div class='square'></div>
+            <div class='square'></div>
+            <div class='square'></div>
+          </div>
+        </div>
+
+        <form id='sign-out' class='hidden'>
+          <p class='message'></p>
+          <input type='submit' class='sign-out' name='signout' value='Sign Out'>
+        </form>
+      </section>
+
+      <form id='change-password' class='border hidden'>
+        <fieldset class='form'>
+          <legend>Change Password:</legend>
+          <p class='message'></p>
+            <label>Old Password: </label>
+              <input type='password' name='MIRROR[API DATA]'>
+            <label>New Password: </label>
+              <input type='password' name='MIRROR[API DATA]'>
+            <label>Confirm Password: </label>
+              <input type='password' name='MIRROR[API DATA]'>
+          <input class='submit' type='submit' name='submit' value='Submit'>
+        </fieldset>
+      </form>
+
+      <section id="about-contact">
+        <section id="about" class='border'>
+          <h3>Your Development Team:</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.</p>
+          <img src='IMG PATH' alt='img descr'>
+          <img src='IMG PATH' alt='img descr'>
+        </section>
+        <form id='contact' class='border'>
+          <fieldset class='form'>
+            <legend>Contact Us:</legend>
+            <p class='message'></p>
+              <label>Name: </label>
+                <input type='name' name='MIRROR[API DATA]' placeholder='First Last'>
+              <label>Email: </label>
+                <input type='email' name='MIRROR[API DATA]' placeholder="name@webaddress.com">
+              <input class='submit' type='submit' name='submit' value='Submit'>
+          </fieldset>
+        </form>
+      </section>
+
+      </body>
 </html>
