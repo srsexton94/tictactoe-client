@@ -1,5 +1,19 @@
 // SUMMARIZED PROJECT INSTRUCTION - not final ReadMe
 
+// commit notes:
+// adds bootstrap classes to html #game-board to set up layout for basic Tic Tac Toe
+// removes form options from #game-start that were for possible stretch goals, leaves comment to add back later if there's time
+// makes some HTML edits to get rid of linter errors
+// creates an 'auth' subdirectory with api.js events.js and ui.js for code related to authentication
+// adds correct filepath to authEvents and drafts out two gameEvents event handlers (onStartGame and onSelectSquare) in app.js
+// removes template comments from app.js.
+// adds require scripts to events.js with placeholder in getFormFields
+// Adds requrie scripts and exports; and drafts onSignUp, onSignIn, onChangePassword, and onSignOut function logic, based on classwork examples, in events.js.
+// cleans up events.js comments for readability
+// drafts signUp, signIn, changePassword, and signOut in api.js based on classwork - adds comments to each to better remember purpose, and to note questions for later
+// Adds require scripts and exports; and drafts out onSignUpSuccess/failure, onSignInSuccess/Failure, onChangePasswordSuccess/Failure, and onSignOutSuccess/failure in ui.js based off of classwork examples
+// in ui.js, adds form reset option to failure cases, expands commenting for clarity, comments out some classwork code that may be useful later
+
 # TicTacToe
 
 ## Objectives:

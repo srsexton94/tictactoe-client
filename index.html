@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic-Tac-Toe Game</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -32,9 +32,9 @@
       <form id='sign-up' class='border'>
         <fieldset class='form'>
           <legend>Sign Up:</legend>
-          <p class='message'></p>
+          <p id='signup-message'></p>
           <label>Name: </label>
-            <input type='name' name='MIRROR[API DATA]' placeholder='First Last'>
+            <input type='text' name='MIRROR[API DATA]' placeholder='First Last'>
           <label>Email: </label>
             <input type='email' name='MIRROR[API DATA]' placeholder="name@webaddress.com">
           <label>Password: </label>
@@ -48,7 +48,7 @@
       <form id='sign-in' class='border'>
         <fieldset class='form'>
           <legend>Sign In:</legend>
-          <p class='message'></p>
+          <p id='signin-message'></p>
           <label>Email: </label>
             <input type='email' name='MIRROR[API DATA]' placeholder="name@webaddress.com">
           <label>Password: </label>
@@ -69,29 +69,30 @@
           </ul>
         </nav>
         <div id='display'>
+
           <form id="game-start">
             <legend>Let's Play!</legend>
-            <label>Pick a symbol:</label>
-              <input> // DROP DOWN MENU?
-            <label>Difficulty Level</label>
-              <input> // DROP DOWN MENU?
+            <!--- Add play options later iff time -->
             <input class='submit' type='submit' name='submit' value='START'>
           </form>
-          <div id="game-board"> // HOW TO ADJUST #OF TILES?
-            <div class='square'></div>
-            <div class='square'></div>
-            <div class='square'></div>
-            <div class='square'></div>
-            <div class='square'></div>
-            <div class='square'></div>
-            <div class='square'></div>
-            <div class='square'></div>
-            <div class='square'></div>
+
+          <div id="game-board" class='container'>
+            <div class='row'>
+              <div class='col-4 square'>00</div>
+              <div class='col-4 square'>01</div>
+              <div class='col-4 square'>02</div>
+              <div class='col-4 square'>10</div>
+              <div class='col-4 square'>11</div>
+              <div class='col-4 square'>12</div>
+              <div class='col-4 square'>20</div>
+              <div class='col-4 square'>21</div>
+              <div class='col-4 square'>22</div>
+            </div>
           </div>
         </div>
 
         <form id='sign-out' class='hidden'>
-          <p class='message'></p>
+          <p id='signout-message'></p>
           <input type='submit' class='sign-out' name='signout' value='Sign Out'>
         </form>
       </section>
@@ -99,7 +100,7 @@
       <form id='change-password' class='border hidden'>
         <fieldset class='form'>
           <legend>Change Password:</legend>
-          <p class='message'></p>
+          <p id='changepassword-message'></p>
             <label>Old Password: </label>
               <input type='password' name='MIRROR[API DATA]'>
             <label>New Password: </label>
@@ -120,15 +121,15 @@
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.</p>
-          <img src='IMG PATH' alt='img descr'>
-          <img src='IMG PATH' alt='img descr'>
+          <img src='#' alt='img descr'>
+          <img src='#' alt='img descr'>
         </section>
         <form id='contact' class='border'>
           <fieldset class='form'>
             <legend>Contact Us:</legend>
             <p class='message'></p>
               <label>Name: </label>
-                <input type='name' name='MIRROR[API DATA]' placeholder='First Last'>
+                <input type='text' name='MIRROR[API DATA]' placeholder='First Last'>
               <label>Email: </label>
                 <input type='email' name='MIRROR[API DATA]' placeholder="name@webaddress.com">
               <input class='submit' type='submit' name='submit' value='Submit'>

@@ -1,19 +1,14 @@
 'use strict'
 
-const authEvents = require('FILEPATH EVENTS')
-const OTHERFILE? = require('FILEPATH OTHER')
-
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
-
-// use require without a reference to ensure a file is bundled
-// require('./example')
+const authEvents = require('./auth/events')
+const gameEvents = require('FILEPATH') // need to add filepath!
 
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#game-start').on('submit', OTHERFILE?.onStartGame)
+  $('#game-start').on('submit', gameEvents.onStartGame)
+  $('.square').on('submit', gameEvents.onSelectSquare)
   $('#sign-out').on('submit', authEvents.onSignOut)
 })
-// add event handler(s?) for play space selecting
+// add event handler for contact form?
