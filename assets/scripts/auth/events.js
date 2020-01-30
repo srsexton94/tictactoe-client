@@ -1,5 +1,5 @@
 'use strict'
-const getFormFields = require('FILEPATH') // need to add filepath!
+const getFormFields = require('../../../lib/get-form-fields.js') // need to add filepath!
 const api = require('./api')
 const ui = require('./ui')
 

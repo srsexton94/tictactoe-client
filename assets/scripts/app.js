@@ -1,7 +1,7 @@
 'use strict'
 
 const authEvents = require('./auth/events')
-const gameEvents = require('FILEPATH') // need to add filepath!
+// const gameEvents = require('FILEPATH') // need to add filepath!
 
 $(() => {
   // authentication events
@@ -11,6 +11,6 @@ $(() => {
   $('#sign-out').on('submit', authEvents.onSignOut)
 
   // game events
-  $('#game-start').on('submit', gameEvents.onStartGame)
-  $('.square').on('click', gameEvents.onSelectSquare)
+  // $('#game-start').on('submit', gameEvents.onStartGame)
+  // $('.square').on('click', gameEvents.onSelectSquare)
 })

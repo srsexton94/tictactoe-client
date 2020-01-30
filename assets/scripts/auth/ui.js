@@ -3,115 +3,105 @@
 const store = require('./../store.js')
 
 const onSignUpSuccess = response => {
-  // add success message in signup form --> **still need to add color/style!**
-  $('#signup-message').text(`${response.user.username} successfully signed up`)
+  // add success message in signup form
+  $('#signup-message').text(`${response.user.username} successfully signed up`).addClass('success')
 
   // clears the form
   $('#sign-up').trigger('reset')
 
-  // commented code is from classwork, clears message after 5 seconds
-  // add back in if useful
-  /* setTimeout(() => {
-    $('#message').text('').removeClass('success')
-  }, 5000) */
+  setTimeout(() => {
+    $('#signup-message').text('').removeClass('success')
+  }, 5000)
 }
 
 const onSignUpFailure = response => {
-  // add failure message in signup form --> **still need to add color/style!**
-  $('#signup-message').text('Sorry, sign up unsuccessful.')
+  // add failure message in signup form
+  $('#signup-message').text('Sorry, sign up unsuccessful.').addClass('failure')
 
   // clears the form
   $('#sign-up').trigger('reset')
 
-  /* setTimeout(() => {
-    $('#message').text('').removeClass('success')
-  }, 5000) */
+  setTimeout(() => {
+    $('#signup-message').text('').removeClass('success')
+  }, 5000)
 }
 
 const onSignInSuccess = response => {
-  // add success message in signup form --> **still need to add color/style!**
-  $('#signin-message').text(`Welcome ${response.user.username}`)
+  // add success message in signin form
+  $('#signin-message').text(`Welcome ${response.user.email}`).addClass('success')
 
   // clears the form
   $('#sign-in').trigger('reset')
 
-  /* setTimeout(() => {
+  setTimeout(() => {
     $('#signin-message').text('').removeClass('success')
-    $('#sign-up').addClass('hidden')
-    $('#sign-in').addClass('hidden')
-    $('#change-password').removeClass('hidden')
-    $('#sign-out').removeClass('hidden')
-  }, 5000) */
+  }, 5000)
 
   // stores the response data in 'store.js' to access token later
   store.user = response.user
 }
 
 const onSignInFailure = response => {
-  // add success message in signup form --> **still need to add color/style!**
-  $('#message').text('Email or password incorrect, Please try again.')
+  // add success message in signin form
+  $('#signin-message').text('Email or password incorrect, Please try again.').addClass('failure')
 
   // clears forms
   $('#sign-in').trigger('reset')
 
-  /* setTimeout(() => {
-    $('#message').text('').removeClass('success')
-  }, 5000) */
+  setTimeout(() => {
+    $('#signin-message').text('').removeClass('success')
+  }, 5000)
 }
 
 const onChangePasswordSuccess = response => {
-  // add success message in signup form --> **still need to add color/style!**
-  $('#message').text('Password changed successfully.')
+  // add success message in changepassword form
+  $('#changepassword-message').text('Password changed successfully.').addClass('success')
 
   // clears form
   $('#change-password').trigger('reset')
 
-  /* setTimeout(() => {
-    $('#message').text('').removeClass('success')
-  }, 5000) */
+  setTimeout(() => {
+    $('#changepassword-message').text('').removeClass('success')
+  }, 5000)
 }
 
 const onChangePasswordFailure = response => {
-  // add success message in signup form --> **still need to add color/style!**
-  $('#message').text('Password update failed, Please try again.')
+  // add success message in changepassword form
+  $('#changepassword-message').text('Password update failed, Please try again.').addClass('failure')
 
   // clears form
   $('#change-password').trigger('reset')
 
-  /* setTimeout(() => {
-    $('#message').text('').removeClass('success')
-  }, 5000) */
+  setTimeout(() => {
+    $('#changepassword-message').text('').removeClass('success')
+  }, 5000)
 }
 
 const onSignOutSuccess = response => {
-  // add success message in signup form --> **still need to add color/style!**
-  $('#message').text(`Goodbye ${response.user.username}!`)
+  // add success message in signout form
+  $('#signout-message').text(`Goodbye!`).addClass('success')
 
   // clears form
   $('#sign-out').trigger('reset')
 
-  /* setTimeout(() => {
-    $('#message').text('').removeClass('success')
-    $('#sign-up').removeClass('hidden')
-    $('#sign-in').removeClass('hidden')
-    $('#change-password').addClass('hidden')
-    $('#sign-out').addClass('hidden')
-  }, 5000) */
+  setTimeout(() => {
+    $('#signout-message').text('').removeClass('success')
+  }, 5000)
 
   // wipe signed in data clean
   store.user = null
 }
 
 const onSignOutFailure = response => {
-  // add success message in signup form --> **still need to add color/style!**
-  $('#message').text('Alert: Account still signed in.')
+  // add success message in signout form
+  $('#signout-message').text('Alert: Account still signed in.').addClass('failure')
 
   // clears form
   $('#sign-out').trigger('reset')
 
-  /* setTimeout(() => {
-    $('#message').text('').removeClass('success')
-  }, 5000) */
+  setTimeout(() => {
+    $('#signout-message').text('').removeClass('success')
+  }, 5000)
 }
 
 module.exports = {

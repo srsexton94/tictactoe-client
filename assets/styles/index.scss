@@ -1,1 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
+
+.square {
+  border: 2px solid;
+  text-align: center;
+  height: 7em;
+}
+
+.success {
+  background-color: limegreen;
+}
+
+.failure {
+  background-color: magenta;
+}
