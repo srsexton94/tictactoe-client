@@ -1,7 +1,5 @@
 // SUMMARIZED PROJECT INSTRUCTION - not final ReadMe
-
 // commit notes:
-
 # TicTacToe
 
 ## Objectives:
@@ -10,16 +8,16 @@
 Web app from scratch (individually, to someone else's spec), dynamic game with game logic mapped out & Readme.md - communicates with provided backend to store game states
 
 ## Requirements
-* Deploy online, on public GitHub page - work shared on GitHub repo with frequent, cohesive commits
+* ~~Deploy online, on public GitHub page;~~ work shared on GitHub repo with frequent, cohesive commits
   - pin as a GitHub 'Popular Repository'
-  - Meaningful description field (w/live URL github image)
+  - Meaningful description field ~~(w/live URL github image)~~
   - List tech used, doc planning, dev process, problem solving, unsolved problems, wireframes/user stories (tell story!)
 * Technical Specifications:
   - Custom game Engine, SPA - renders game board in browser, switch turns b/w tokens, visually display results
   - Support playing multiple games, one at a time
   - Use event handlers (jQuery/DOM) & AJAX for API interaction
 * API Specifications:
-  - CREATE new games on server, UPDATE game by storing new moves, & READ (show) game stats (ie total wins)
+  - CREATE new games on server, UPDATE game by storing new moves, & READ (index) game stats (ie total wins)
 * Auth Specifications:
   - SignUP/IN/OUT & Change PW, display only when appropriate
   - Include success/failure feedback & clear forms after submit
