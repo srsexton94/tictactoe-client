@@ -1,40 +1,39 @@
 'use strict'
 
 const config = require('../config')
+const store = require('../store')
 
-const getGameTally = () => {
-  return $.ajax({
-    method: 'GET',
-    url: config.apiUrl + '/games'
-  })
-}
-
-const startGame = data => {
+const startGame = () => {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/games',
-    data
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: '{}'
   })
 }
 
-const restartGame = data => {
-  return $.ajax({
-    method: 'GET',
-    url: config.apiUrl + '/games/' + data.game.id
-  })
-}
-
-const selectSquare = data => {
+/* const selectSquare = data => {
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/games/' + data.game.id,
     data
   })
-}
+} */
 
 module.exports = {
-  getGameTally,
-  startGame,
-  restartGame,
-  selectSquare
+  startGame
+  // selectSquare
 }
+
+// for reference
+/*
+const varName = data => {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/games/' [+ data.game.id],
+    data
+  })
+}
+*/
