@@ -39,6 +39,7 @@ const onSignInSuccess = response => {
 
   // stores the response data in 'store.js' to access token later
   store.user = response.user
+  store.user.games = []
 }
 
 const onSignInFailure = response => {

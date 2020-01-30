@@ -11,12 +11,15 @@ const onStartGame = event => {
     .catch(ui.onStartGameFailure)
 }
 
-/* const onSelectSquare = event => {
+const onSelectSquare = event => {
   event.preventDefault() // prevents refresh
-  console.log('SELECTED!')
-} */
+
+  api.selectSquare()
+    .then(ui.onSelectSquareSuccess)
+    .catch(ui.onSelectSquareFailure)
+}
 
 module.exports = {
-  onStartGame
-  // onSelectSquare
+  onStartGame,
+  onSelectSquare
 }

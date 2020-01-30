@@ -14,26 +14,31 @@ const startGame = () => {
   })
 }
 
-/* const selectSquare = data => {
+const selectSquare = () => {
+  // console.log(store.user.games)
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/games/' + data.game.id,
-    data
+    url: config.apiUrl + '/games/' + store.user.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
-} */
+}
 
 module.exports = {
-  startGame
-  // selectSquare
+  startGame,
+  selectSquare
 }
 
 // for reference
 /*
-const varName = data => {
-  return $.ajax({
-    method: 'PATCH',
-    url: config.apiUrl + '/games/' [+ data.game.id],
-    data
-  })
+{
+  "game": {
+    "cell": {
+      "index": 0,
+      "value": "x"
+    },
+    "over": false
+  }
 }
 */
