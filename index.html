@@ -34,13 +34,13 @@
           <legend>Sign Up:</legend>
           <p id='signup-message'></p>
           <label>Name: </label>
-            <input type='text' name='MIRROR[API DATA]' placeholder='First Last'>
+            <input type='text' name='name' placeholder='First Last'>
           <label>Email: </label>
-            <input type='email' name='MIRROR[API DATA]' placeholder="name@webaddress.com">
+            <input type='email' name='credentials[email]' placeholder="name@webaddress.com">
           <label>Password: </label>
-            <input type='password' name='MIRROR[API DATA]'>
+            <input type='password' name='credentials[password]'>
           <label>Confirm Password: </label>
-            <input type='password' name='MIRROR[API DATA]'>
+            <input type='password' name='credentials[password_confirmation]'>
           <input class='submit' type='submit' name='submit' value='Submit'>
         </fieldset>
       </form>
@@ -50,47 +50,45 @@
           <legend>Sign In:</legend>
           <p id='signin-message'></p>
           <label>Email: </label>
-            <input type='email' name='MIRROR[API DATA]' placeholder="name@webaddress.com">
+            <input type='email' name='credentials[email]' placeholder="name@webaddress.com">
           <label>Password: </label>
-            <input type='password' name='MIRROR[API DATA]'>
+            <input type='password' name='credentials[password]'>
           <input class='submit' type='submit' name='submit' value='Submit'>
         </fieldset>
       </form>
 
-      <section id="game" class='hidden'>
+      <section id="game">
         <h2>Tic Tac Toe</h2>
         <nav>
           <ul>
             <li><a href="#about-contact">About Us</a></li>
             <li><a href="#about-contact">Contact</a></li>
             <li><a href="#change-password">Change Password</a></li>
-            <li><a href="#" class='hidden'>Quit Game</a></li>
             <li><a href='#sign-out'>Sign Out</a></li>
           </ul>
         </nav>
+
         <div id='display'>
 
           <form id="game-start">
             <legend>Let's Play!</legend>
-            <!--- Add play options later iff time -->
             <input class='submit' type='submit' name='submit' value='START'>
           </form>
 
-          <section id="player-panels">
-            <div id="player1" class="player-panel">
-              <h4 id="player1-name" class="username">Player 1</h4>
-              <p id="player1-wins" class="win-tally"></p>
-              <p id="player1-score" class="score"></p>
-              <p id="player1-message"></p>
+          <aside id="player-panels">
+            <div id="playerX" class="player-panel">
+              <h4 id="playerX-name" class="username">Player X</h4>
+              <p id="playerX-games-tally" class="games-tally"></p>
+              <p id="playerX-message"></p>
             </div>
-            <div id="player2" class="player-panel">
-              <h4 id="player2-name" class="username">Player 2</h4>
-              <p id="player2-wins" class="win-tally"></p>
-              <p id="player2-score" class="score"></p>
-              <p id="player2-message"></p>
+            <div id="playerO" class="player-panel">
+              <h4 id="playerO-name" class="username">Player O</h4>
+              <p id="playerO-games-tally" class="games-tally"></p>
+              <p id="playerO-message"></p>
             </div>
-          </section>
-          <div id="game-board" class='container'>
+          </aside>
+
+          <main id="game-board" class='container'>
             <div class='row'>
               <div class='col-4 square'>0</div>
               <div class='col-4 square'>1</div>
@@ -102,10 +100,20 @@
               <div class='col-4 square'>7</div>
               <div class='col-4 square'>8</div>
             </div>
-          </div>
+          </main>
+
+          <nav id='#game-admin'>
+            <ul> <!-- make these buttons? -->
+              <li>New Game</li>
+              <li>Pause Game</li>
+              <li>Restart Game</li>
+              <li>Quit Game</li>
+            </ul>
+          </nav>
+
         </div>
 
-        <form id='sign-out' class='hidden'>
+        <form id='sign-out'>
           <p id='signout-message'></p>
           <input type='submit' class='sign-out' name='signout' value='Sign Out'>
         </form>
@@ -116,17 +124,16 @@
           <legend>Change Password:</legend>
           <p id='changepassword-message'></p>
             <label>Old Password: </label>
-              <input type='password' name='MIRROR[API DATA]'>
+              <input type='password' name='passwords[old]'>
             <label>New Password: </label>
-              <input type='password' name='MIRROR[API DATA]'>
-            <label>Confirm Password: </label>
-              <input type='password' name='MIRROR[API DATA]'>
+              <input type='password' name='passwords[new]'>
           <input class='submit' type='submit' name='submit' value='Submit'>
         </fieldset>
       </form>
 
       <section id="about-contact">
-        <section id="about" class='border'>
+
+        <article id="about" class='border'>
           <h3>Your Development Team:</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
           sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -137,19 +144,23 @@
           culpa qui officia deserunt mollit anim id est laborum.</p>
           <img src='#' alt='img descr'>
           <img src='#' alt='img descr'>
-        </section>
+        </article>
+
         <form id='contact' class='border'>
           <fieldset class='form'>
             <legend>Contact Us:</legend>
             <p class='message'></p>
               <label>Name: </label>
-                <input type='text' name='MIRROR[API DATA]' placeholder='First Last'>
+                <input type='text' name='name' placeholder='First Last'>
               <label>Email: </label>
-                <input type='email' name='MIRROR[API DATA]' placeholder="name@webaddress.com">
+                <input type='email' name='email' placeholder="name@webaddress.com">
+              <label>Message: </label>
+                <input type='text' name='message'>
               <input class='submit' type='submit' name='submit' value='Submit'>
           </fieldset>
         </form>
+
       </section>
 
-      </body>
+    </body>
 </html>
