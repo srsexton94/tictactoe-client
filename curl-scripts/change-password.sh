@@ -1,5 +1,3 @@
-#!/bin/bash
-# VARIABLE=VALUE sh curl-scripts/auth/change-password.sh
 
 curl "https://tic-tac-toe-wdi.herokuapp.com/change-password" \
   --include \

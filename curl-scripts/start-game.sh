@@ -1,11 +1,8 @@
-#!/bin/bash
 
-# Double check API data format when on internet!!!
-curl --include --request POST https://tic-tac-toe-wdi.herokuapp.com/games \
---header "Content-type: application/json" \
---data '{
-
-  }
-}'
+curl "https://tic-tac-toe-wdi.herokuapp.com/games" \
+  --include \
+  --request POST \
+  --header "Authorization: Token token=${TOKEN}" \
+  --header "Content-Type: application/json" \
 
 echo

@@ -1,9 +1,4 @@
-#!/bin/bash
-# what was this^ again? is it necessary?
-
-# VARIABLE=VALUE sh curl-scripts/auth/sign-up.sh
-
-# is this the correct url? (production vs development?)
+# VARIABLE=value sh curl-scripts...FILEPATH.sh
 
 curl "https://tic-tac-toe-wdi.herokuapp.com/sign-up" \
   --include \
@@ -12,7 +7,6 @@ curl "https://tic-tac-toe-wdi.herokuapp.com/sign-up" \
   --data '{
     "credentials": {
       "email": "'"${EMAIL}"'",
-      "username": "'"${USERNAME}"'",
       "password": "'"${PASSWORD}"'",
       "password_confirmation": "'"${PASSWORD}"'"
     }

@@ -8,8 +8,8 @@
 Web app from scratch (individually, to someone else's spec), dynamic game with game logic mapped out & Readme.md - communicates with provided backend to store game states
 
 ## Requirements
-* ~~Deploy online, on public GitHub page;~~ work shared on GitHub repo with frequent, cohesive commits
-  - pin as a GitHub 'Popular Repository'
+* ~~Deploy online, on public GitHub page; work shared on GitHub repo~~ with frequent, cohesive commits
+  - ~~pin as a GitHub 'Popular Repository'~~
   - Meaningful description field ~~(w/live URL github image)~~
   - List tech used, doc planning, dev process, problem solving, unsolved problems, wireframes/user stories (tell story!)
 * Technical Specifications:

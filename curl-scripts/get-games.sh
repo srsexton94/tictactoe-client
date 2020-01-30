@@ -1,7 +1,8 @@
-#!/bin/bash
 
-# are these supposed to have quotes around the URL?!?
-# (my jquery auth lesson has them, but my crud doesn't)
-curl --include "https://tic-tac-toe-wdi.herokuapp.com/games"
+curl "https://tic-tac-toe-wdi.herokuapp.com/games" \
+  --include \
+  --request GET \
+  --header "Authorization: Token token=${TOKEN}" \
+  --header "Content-Type: application/json" \
 
 echo
