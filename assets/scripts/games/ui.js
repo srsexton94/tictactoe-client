@@ -1,7 +1,7 @@
 'use strict'
 
-const store = require('./../store.js')
-// const gameEngine = require('FILEPATH')
+const store = require('./../store')
+const game = require('./game-engine')
 
 const onStartGameSuccess = response => {
   // pushes current game to User's game array
@@ -28,8 +28,9 @@ const onStartGameFailure = response => {
 }
 
 const onSelectSquareSuccess = response => {
-  // call gameEngine(response), display player token in square
-  // also.. console.log(store.user.games)?
+  // calls main game function
+  // game.switchPlayers(response)
+  game.gameEngine(response)
 
   // success message
   $('#gameboard-message').text('Good move!').addClass('success')
