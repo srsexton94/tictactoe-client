@@ -10,18 +10,18 @@ const startGame = () => {
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: '{}'
+    data: {}
   })
 }
 
-const selectSquare = () => {
-  // console.log(store.user.games)
+const selectSquare = data => {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/games/' + store.user.id,
+    url: config.apiUrl + '/games/' + store.user.currentGame.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
 
@@ -29,16 +29,3 @@ module.exports = {
   startGame,
   selectSquare
 }
-
-// for reference
-/*
-{
-  "game": {
-    "cell": {
-      "index": 0,
-      "value": "x"
-    },
-    "over": false
-  }
-}
-*/
