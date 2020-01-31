@@ -29,7 +29,6 @@ const onStartGameFailure = response => {
 
 const onSelectSquareSuccess = response => {
   // calls main game function
-  // game.switchPlayers(response)
   game.gameEngine(response)
 
   // success message

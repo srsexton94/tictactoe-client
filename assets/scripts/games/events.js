@@ -10,20 +10,16 @@ const onStartGame = event => {
     .catch(ui.onStartGameFailure)
 }
 
-// for stretch goal: to input playtoken options return an object
-// that can access x or o for the data, but also access the token
-// to be displayed, as different key/value pairs
-
 let checkTurn = true // declares checker globally so it can be altered by switchPlayers
 const switchPlayers = () => {
   let currentValue
 
-  if (checkTurn) {
+  if (checkTurn) { // checks which turn it is
     currentValue = 'x'
   } else {
     currentValue = 'o'
   }
-  checkTurn = !checkTurn
+  checkTurn = !checkTurn // alternates checker
   return currentValue
 }
 
