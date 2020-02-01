@@ -1,15 +1,22 @@
 'use strict'
 
 const store = require('./../store')
+const win = require('./win')
 
-// declares this externally in case we want to offer multiple game sizes
-// NOTE: hard code it into the splice method if not attempting that stretch goal
-const gameSize = 3
+const checkWin = spots => {
+  if (spots.length === 3) {
+    win.inaRow(spots)
+  } if (spots.length === 4) {
+    // switch statement: 4 options
+  } if (spots.length === 5) {
+    // switch statment: 10 options
+  }
+}
 
 const gameEngine = response => {
   // updates stored current game to match API response
   store.user.currentGame.cells = response.game.cells
-  // clones the stored current game to use cell array without mutating
+  // clones the stored current game to use cell array without mutating original
   const gameboard = [...store.user.currentGame.cells]
   // initializes empty array to push chunked subarrays to
   const coordinates = []
@@ -17,7 +24,7 @@ const gameEngine = response => {
   // chunks gameboard into multidimensional array
   // indices represent the coordinate location of cell
   while (gameboard.length > 0) {
-    coordinates.push(gameboard.splice(0, gameSize))
+    coordinates.push(gameboard.splice(0, 3))
   }
 
   const xSpots = []
@@ -33,8 +40,16 @@ const gameEngine = response => {
       }
     }
   }
-  // console.log('xSpots: ', xSpots)
-  // console.log('oSpots: ', oSpots)
+
+  // if a player just went and has 3 or more choices, check if they won
+  if (xSpots.length > oSpots.length && xSpots.length >= 3) {
+    checkWin(xSpots)
+  } else if (oSpots.length === xSpots.length && oSpots.length >= 3) {
+    checkWin(oSpots)
+  }
+
+  console.log('xSpots: ', xSpots)
+  console.log('oSpots: ', oSpots)
   // console.log('coordinates: ', coordinates)
   // console.log('gameboard: ', gameboard)
   // console.log('currentGame.Cells: ', store.user.currentGame.cells)
