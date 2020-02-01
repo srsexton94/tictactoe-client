@@ -8,6 +8,9 @@ const onStartGameSuccess = response => {
   store.user.currentGame = response.game
   store.user.games.push(response.game)
 
+  // removes any text on game spaces
+  $('.square').text('')
+
   // add success message above gameboard
   $('#gameboard-message').text('Let\'s Play!').addClass('success')
 
@@ -34,7 +37,7 @@ const onSelectSquareSuccess = response => {
   // success message
   $('#gameboard-message').text('Good move!').addClass('success')
 
-  // removes failure message after 5 seconds
+  // removes success message after 5 seconds
   setTimeout(() => {
     $('#gameboard-message').text('').removeClass('success')
   }, 5000)
@@ -55,4 +58,6 @@ module.exports = {
   onStartGameFailure,
   onSelectSquareSuccess,
   onSelectSquareFailure
+  // continuePlaying,
+  // onWin
 }

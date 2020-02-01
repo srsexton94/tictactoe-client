@@ -6,7 +6,6 @@ const row = require('./row')
 // spots the player has yet chosen) to see if they're in a row (if they win)
 const checkWin = spots => {
   let answer = false
-  console.log(spots.length)
   if (spots.length === 3) {
     answer = row.inaRow(spots)
   } else if (spots.length === 4) {
@@ -64,5 +63,3 @@ const checkWin = spots => {
 module.exports = {
   checkWin
 }
-
-console.log(checkWin([[0, 1], [1, 1], [1, 2], [2, 1]]))

@@ -2,6 +2,7 @@
 
 const store = require('./../store')
 const win = require('./win')
+// const ui = require('./ui')
 
 const gameEngine = response => {
   // updates stored current game to match API response
@@ -30,12 +31,15 @@ const gameEngine = response => {
       }
     }
   }
-
   // if a player just went and has 3 or more spots chosen, check if they won
   if (xSpots.length > oSpots.length && xSpots.length >= 3) {
-    win.checkWin(xSpots)
+    if (win.checkWin(xSpots)) {
+      console.log('x wins')
+    }
   } else if (oSpots.length === xSpots.length && oSpots.length >= 3) {
-    win.checkWin(oSpots)
+    if (win.checkWin(oSpots)) {
+      console.log('o wins')
+    }
   }
 }
 
