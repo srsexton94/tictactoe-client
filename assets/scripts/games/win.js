@@ -1,40 +1,68 @@
 'use strict'
 
-const exceptions = threeSpots => {
-  const str = (JSON.stringify(threeSpots))
-  if ((str === JSON.stringify([[0, 0], [1, 2], [2, 1]])) || (str === JSON.stringify([[0, 1], [1, 0], [2, 2]]))) {
-    return true
+const row = require('./row')
+
+// this function checks each possible spot combination (depending on how many
+// spots the player has yet chosen) to see if they're in a row (if they win)
+const checkWin = spots => {
+  let answer = false
+  console.log(spots.length)
+  if (spots.length === 3) {
+    answer = row.inaRow(spots)
+  } else if (spots.length === 4) {
+    switch (true) {
+      case row.inaRow([spots[0], spots[1], spots[2]]):
+        answer = true
+        break
+      case row.inaRow([spots[0], spots[1], spots[3]]):
+        answer = true
+        break
+      case row.inaRow([spots[0], spots[2], spots[3]]):
+        answer = true
+        break
+      case row.inaRow([spots[1], spots[2], spots[3]]):
+        answer = true
+        break
+    }
+  } else if (spots.length === 5) {
+    switch (true) {
+      case row.inaRow([spots[0], spots[1], spots[2]]):
+        answer = true
+        break
+      case row.inaRow([spots[0], spots[1], spots[3]]):
+        answer = true
+        break
+      case row.inaRow([spots[0], spots[1], spots[4]]):
+        answer = true
+        break
+      case row.inaRow([spots[0], spots[2], spots[3]]):
+        answer = true
+        break
+      case row.inaRow([spots[0], spots[2], spots[4]]):
+        answer = true
+        break
+      case row.inaRow([spots[0], spots[3], spots[4]]):
+        answer = true
+        break
+      case row.inaRow([spots[1], spots[2], spots[3]]):
+        answer = true
+        break
+      case row.inaRow([spots[1], spots[2], spots[4]]):
+        answer = true
+        break
+      case row.inaRow([spots[1], spots[3], spots[4]]):
+        answer = true
+        break
+      case row.inaRow([spots[2], spots[3], spots[4]]):
+        answer = true
+        break
+    }
   }
-  return false
-}
-
-const inaRow = threeSpots => {
-  // this block tests to see if the sum of each axes add to 3 & stores boolean in variable
-  let xCounter = 0
-  let yCounter = 0
-  threeSpots.forEach(e => {
-    xCounter += e[0]
-    yCounter += e[1]
-  })
-  const xMakesThree = xCounter === 3
-  const yMakesThree = yCounter === 3
-
-  const exception = exceptions(threeSpots)
-
-  // these two lines test if all of each axes are the same, and stores the boolean in a variable
-  const allX = threeSpots.every(e => (e[0] === threeSpots[0][0]))
-  const allY = threeSpots.every(e => (e[1] === threeSpots[0][1]))
-
-  // this block tests to see if the player won
-  // if both a players axes are either all the same or add up to three
-  // AND if they're not one of the two exceptions, they've won!
-  if (((xMakesThree && (yMakesThree || allY)) || (allX && yMakesThree)) && !exception) {
-    return true
-  } else {
-    return false
-  }
+  return answer
 }
 
 module.exports = {
-  inaRow
+  checkWin
 }
+
+console.log(checkWin([[0, 1], [1, 1], [1, 2], [2, 1]]))
