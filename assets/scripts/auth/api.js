@@ -33,8 +33,7 @@ const changePassword = data => {
   })
 }
 
-// removes user data from the store object (check later- what is happening with
-// the API data here?)
+// removes user data from the store object
 const signOut = () => {
   return $.ajax({
     url: config.apiUrl + '/sign-out',

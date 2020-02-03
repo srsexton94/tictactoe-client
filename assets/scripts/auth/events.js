@@ -9,12 +9,12 @@ const onSignUp = event => {
   const form = event.target // saves form that was submitted into a variable
   const data = getFormFields(form) // getFormFields retrieves API-friendly data
 
-  api.signUp(data) // post data to API, trigger success/failure cases
+  api.signUp(data) // POSTs user data to API, trigger success/failure cases
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
 }
 
-const onSignIn = event => { // mirrors previous comments
+const onSignIn = event => { // the following all mirror previous comments
   event.preventDefault()
 
   const form = event.target
@@ -25,7 +25,7 @@ const onSignIn = event => { // mirrors previous comments
     .catch(ui.onSignInFailure)
 }
 
-const onChangePassword = event => { // mirrors previous comments
+const onChangePassword = event => {
   event.preventDefault()
 
   const form = event.target
@@ -36,8 +36,9 @@ const onChangePassword = event => { // mirrors previous comments
     .catch(ui.onChangePasswordFailure)
 }
 
-const onSignOut = event => { // mirrors previous comments
+const onSignOut = event => {
   event.preventDefault()
+
   api.signOut()
     .then(ui.onSignOutSuccess)
     .catch(ui.onSignOutFailure)

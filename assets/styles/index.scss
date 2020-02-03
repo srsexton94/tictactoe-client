@@ -6,11 +6,13 @@ header {
 
 h1 {
   font-size: 5em;
+  text-shadow: 2px 2px purple;
 }
 
 h2 {
   font-size: 3em;
   text-align: center;
+  text-shadow: 2px 2px purple;
 }
 
 input {
@@ -76,12 +78,12 @@ nav {
 }
 
 .square {
-  border: 2px solid;
-  height: 20vh;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  border: 2px solid;
+  display: flex;
   font-size: 8em;
+  height: 20vh;
+  justify-content: center;
   text-shadow: 2px 2px purple;
 }
 

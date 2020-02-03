@@ -5,7 +5,7 @@ const ui = require('./ui')
 const onStartGame = event => {
   event.preventDefault() // prevents refresh
 
-  api.startGame()
+  api.startGame() // POSTs a new game to the API
     .then(ui.onStartGameSuccess)
     .catch(ui.onStartGameFailure)
 }
@@ -46,6 +46,7 @@ const onSelectSquare = event => {
     $(`#${cellID}`).text(`${currentValue}`)
   }
 
+  // codes 'data' with the chosen square (index) and player (currentValue)
   const data = {
     'game': {
       'cell': {
@@ -56,7 +57,7 @@ const onSelectSquare = event => {
     }
   }
 
-  api.selectSquare(data)
+  api.selectSquare(data) // PATCHes api games to reflect chosen square
     .then(ui.onSelectSquareSuccess)
     .catch(ui.onSelectSquareFailure)
 }
@@ -64,7 +65,7 @@ const onSelectSquare = event => {
 const onGetGames = event => {
   event.preventDefault() // prevents refresh
 
-  api.getGames()
+  api.getGames() // GET requests the API to display game tally
     .then(ui.onGetGamesSuccess)
     .catch(ui.onGetGamesFailure)
 }
