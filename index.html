@@ -12,57 +12,56 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <section id="title_page">
-        <h1>Tic Tac Toe</h1>
-        <h3>Instructions</h3>
-        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-        culpa qui officia deserunt mollit anim id est laborum.</p>
-        <ul class='authenticate'>
-          <li><a href='#sign_up'>Sign Up</a></li>
-          <li><a href='#sign_in'>Sign In</a></li>
-        </ul>
-        <a href="#about-contact">About Us/Contact</a>
+      <section id="auth">
+        <section id="title_page">
+          <h1>Tic Tac Toe</h1>
+          <article id="Instructions">
+            <h3>Instructions</h3>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat.</p>
+          </article>
+          <nav>
+            <ul>
+              <li><a href='#sign-up'>Sign Up</a></li>
+              <li><a href='#sign-in'>Sign In</a></li>
+            </ul>
+          </nav>
+        </section>
+
+        <form id='sign-up' class='border'>
+          <fieldset class='form'>
+            <legend>Sign Up:</legend>
+            <p id='signup-message'></p>
+            <label>Name: </label>
+              <input type='text' name='name' placeholder='First Last'>
+            <label>Email: </label>
+              <input type='email' name='credentials[email]' placeholder="name@webaddress.com">
+            <label>Password: </label>
+              <input type='password' name='credentials[password]'>
+            <label>Confirm Password: </label>
+              <input type='password' name='credentials[password_confirmation]'>
+            <input class='submit' type='submit' name='submit' value='Submit'>
+          </fieldset>
+        </form>
+
+        <form id='sign-in' class='border'>
+          <fieldset class='form'>
+            <legend>Sign In:</legend>
+            <p id='signin-message'></p>
+            <label>Email: </label>
+              <input type='email' name='credentials[email]' placeholder="name@webaddress.com">
+            <label>Password: </label>
+              <input type='password' name='credentials[password]'>
+            <input class='submit' type='submit' name='submit' value='Submit'>
+          </fieldset>
+        </form>
       </section>
 
-      <form id='sign-up' class='border'>
-        <fieldset class='form'>
-          <legend>Sign Up:</legend>
-          <p id='signup-message'></p>
-          <label>Name: </label>
-            <input type='text' name='name' placeholder='First Last'>
-          <label>Email: </label>
-            <input type='email' name='credentials[email]' placeholder="name@webaddress.com">
-          <label>Password: </label>
-            <input type='password' name='credentials[password]'>
-          <label>Confirm Password: </label>
-            <input type='password' name='credentials[password_confirmation]'>
-          <input class='submit' type='submit' name='submit' value='Submit'>
-        </fieldset>
-      </form>
-
-      <form id='sign-in' class='border'>
-        <fieldset class='form'>
-          <legend>Sign In:</legend>
-          <p id='signin-message'></p>
-          <label>Email: </label>
-            <input type='email' name='credentials[email]' placeholder="name@webaddress.com">
-          <label>Password: </label>
-            <input type='password' name='credentials[password]'>
-          <input class='submit' type='submit' name='submit' value='Submit'>
-        </fieldset>
-      </form>
-
-      <section id="game">
+      <section id="game" class="hidden">
         <h2>Tic Tac Toe</h2>
         <nav>
           <ul>
-            <li><a href="#about-contact">About Us</a></li>
-            <li><a href="#about-contact">Contact</a></li>
             <li><a href="#change-password">Change Password</a></li>
             <li><a href='#sign-out'>Sign Out</a></li>
           </ul>
@@ -70,12 +69,12 @@
 
         <div id='display'>
 
-          <form id="game-start">
+          <form id="game-start" class="border form">
             <legend>Let's Play!</legend>
             <input class='submit' type='submit' name='submit' value='START'>
           </form>
 
-          <aside id="player-panels">
+          <aside id="player-panels" class="hidden">
             <div id="playerX" class="player-panel">
               <h4 id="playerX-name" class="username">Player X</h4>
               <p id="playerX-games-tally" class="games-tally"></p>
@@ -88,7 +87,7 @@
             </div>
           </aside>
 
-          <main id="game-board" class='container'>
+          <main id="game-board" class='container hidden'>
             <p id="gameboard-message"></p>
             <div class='row'>
               <div id='0' class='col-4 square'></div>
@@ -101,16 +100,15 @@
               <div id='7' class='col-4 square'></div>
               <div id='8' class='col-4 square'></div>
             </div>
+            <nav id='#game-admin'>
+              <ul>
+                <li><a id='new-game' href='#'>New Game</a></li>
+                <li><a id='pause' href='#'>Pause Game</a></li>
+                <li><a id='resume' href='#'>Keep Playing</a></li>
+                <li><a id='quit' href='#game-start'>Quit Game</a></li>
+              </ul>
+            </nav>
           </main>
-
-          <nav id='#game-admin'>
-            <ul>
-              <li><a id='new-game' href='#'>New Game</a></li>
-              <li><a id='pause' href='#'>Pause Game</a></li>
-              <li><a id='resume' href='#'>Keep Playing</a></li>
-              <li><a id='quit' href='#game-start'>Quit Game</a></li>
-            </ul>
-          </nav>
 
         </div>
 
@@ -131,37 +129,6 @@
           <input class='submit' type='submit' name='submit' value='Submit'>
         </fieldset>
       </form>
-
-      <section id="about-contact">
-
-        <article id="about" class='border'>
-          <h3>Your Development Team:</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.</p>
-          <img src='#' alt='img descr'>
-          <img src='#' alt='img descr'>
-        </article>
-
-        <form id='contact' class='border'>
-          <fieldset class='form'>
-            <legend>Contact Us:</legend>
-            <p class='message'></p>
-              <label>Name: </label>
-                <input type='text' name='name' placeholder='First Last'>
-              <label>Email: </label>
-                <input type='email' name='email' placeholder="name@webaddress.com">
-              <label>Message: </label>
-                <input type='text' name='message'>
-              <input class='submit' type='submit' name='submit' value='Submit'>
-          </fieldset>
-        </form>
-
-      </section>
 
     </body>
 </html>

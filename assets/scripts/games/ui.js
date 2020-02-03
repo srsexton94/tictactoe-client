@@ -17,7 +17,9 @@ const onStartGameSuccess = response => {
   // removes success message after 5 seconds
   setTimeout(() => {
     $('#gameboard-message').text('').removeClass('success')
-  }, 5000)
+    $('#player-panels').removeClass('hidden')
+    $('#game-board').removeClass('hidden')
+  }, 2500)
 }
 
 const onStartGameFailure = response => {

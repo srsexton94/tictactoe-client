@@ -1,15 +1,72 @@
 @import '~bootstrap/scss/bootstrap';
 
+h1 {
+  font-size: 5em;
+}
+
+input {
+  margin: auto;
+}
+
+li {
+  display: inline;
+  padding: 1em;
+}
+
+nav {
+  display: block;
+  list-style-type: none;
+  margin: auto;
+}
+
+.border {
+  border: 200px solid $black;
+  border-radius: 25%;
+  margin: 25px auto;
+  padding: 20px;
+  width: 50%;
+}
+
+.failure {
+  background-color: magenta;
+}
+
+.form {
+  display: flex;
+  flex-flow: nowrap column;
+  text-align: center;
+  margin: 5em;
+}
+
+.hidden {
+  display: none;
+}
+
 .square {
   border: 2px solid;
   text-align: center;
   height: 7em;
 }
 
+.sign-out {
+  color: red;
+}
 .success {
   background-color: limegreen;
 }
 
-.failure {
-  background-color: magenta;
+#display {
+  display: flex;
+  flex-flow: nowrap row;
+}
+
+#Instructions {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+
+#title_page {
+  text-align: center;
+  margin: 10em;
 }

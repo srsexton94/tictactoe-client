@@ -20,7 +20,7 @@ const gameEngine = response => {
 
   const xSpots = []
   const oSpots = []
-  // pushes the coordinate pairs for each players choice to the initialized arrays above
+  // pushes coordinate pairs for each players choices to the arrays above
   for (let i = 0; i < coordinates.length; i++) {
     for (let e = 0; e < coordinates[i].length; e++) {
       const cell = coordinates[i][e]

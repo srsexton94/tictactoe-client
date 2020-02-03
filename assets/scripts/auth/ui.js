@@ -35,7 +35,9 @@ const onSignInSuccess = response => {
 
   setTimeout(() => {
     $('#signin-message').text('').removeClass('success')
-  }, 5000)
+    $('#auth').addClass('hidden')
+    $('#game').removeClass('hidden')
+  }, 1000)
 
   // stores the response data in 'store.js' to access token later
   store.user = response.user
@@ -87,7 +89,11 @@ const onSignOutSuccess = response => {
 
   setTimeout(() => {
     $('#signout-message').text('').removeClass('success')
-  }, 5000)
+    $('#auth').removeClass('hidden')
+    $('#game').addClass('hidden')
+    $('#player-panels').addClass('hidden')
+    $('#game-board').addClass('hidden')
+  }, 2500)
 
   // wipe signed in data clean
   store.user = null
