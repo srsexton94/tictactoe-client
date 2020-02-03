@@ -13,6 +13,15 @@ const gameContinue = () => {
   }, 1500)
 }
 
+const gameTie = () => {
+  $('#gameboard-message').text('It\'s a tie! Please play again').addClass('failure')
+  $('.square').addClass('game-disable')
+
+  setTimeout(() => {
+    $('#gameboard-message').text('').removeClass('success')
+  }, 5000)
+}
+
 const gameWin = xo => {
   $('#gameboard-message').text(`${xo} wins! Congrats - play again!`).addClass('success')
   $('.square').addClass('game-disable')
@@ -28,42 +37,28 @@ const gameEngine = response => {
   // clones the stored current game to use cell array without mutating original
   const gameboard = [...store.user.currentGame.cells]
   console.log(gameboard)
-  // initializes empty array to push chunked subarrays to
-  const coordinates = []
-
-  // chunks gameboard into multidimensional array
-  // indices represent the coordinate location of cell
-  while (gameboard.length > 0) {
-    coordinates.push(gameboard.splice(0, 3))
-  }
 
   const xSpots = []
   const oSpots = []
-  // pushes coordinate pairs for each players choices to the arrays above
-  for (let i = 0; i < coordinates.length; i++) {
-    for (let e = 0; e < coordinates[i].length; e++) {
-      const cell = coordinates[i][e]
-      if (cell === 'x') {
-        xSpots.push([i, e])
-      } else if (cell === 'o') {
-        oSpots.push([i, e])
-      }
+
+  for (let i = 0; i < gameboard.length; i++) {
+    if (gameboard[i] === 'x') {
+      xSpots.push(i)
+    } else if (gameboard[i] === 'o') {
+      oSpots.push(i)
     }
   }
-  // if a player just went check if they won
-  if (xSpots.length > oSpots.length) {
-    if (win.checkWin(xSpots)) {
-      gameWin('X')
-    } else {
-      gameContinue()
-    }
-  } else if (oSpots.length === xSpots.length) {
-    if (win.checkWin(oSpots)) {
-      gameWin('O')
-    } else {
-      gameContinue()
-    }
+
+  if (win.checkWin(xSpots)) {
+    gameWin('X')
+  } else if (win.checkWin(oSpots)) {
+    gameWin('O')
+  } else if (xSpots.length === 5) {
+    gameTie()
+  } else {
+    gameContinue()
   }
+
 }
 
 module.exports = {

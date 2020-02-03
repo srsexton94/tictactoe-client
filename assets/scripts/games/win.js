@@ -1,67 +1,44 @@
 'use strict'
 
-const row = require('./row')
+const possibleCombos = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6]
+]
 
-// this function checks each possible spot combination (depending on how many
-// spots the player has yet chosen) to see if they're in a row (if they win)
-const checkWin = spots => {
-  let answer = false
-  if (spots.length === 3) {
-    answer = row.inaRow(spots)
-  } else if (spots.length === 4) {
-    switch (true) {
-      case row.inaRow([spots[0], spots[1], spots[2]]):
-        answer = true
-        break
-      case row.inaRow([spots[0], spots[1], spots[3]]):
-        answer = true
-        break
-      case row.inaRow([spots[0], spots[2], spots[3]]):
-        answer = true
-        break
-      case row.inaRow([spots[1], spots[2], spots[3]]):
-        answer = true
-        break
-    }
-  } else if (spots.length === 5) {
-    switch (true) {
-      case row.inaRow([spots[0], spots[1], spots[2]]):
-        answer = true
-        break
-      case row.inaRow([spots[0], spots[1], spots[3]]):
-        answer = true
-        break
-      case row.inaRow([spots[0], spots[1], spots[4]]):
-        answer = true
-        break
-      case row.inaRow([spots[0], spots[2], spots[3]]):
-        answer = true
-        break
-      case row.inaRow([spots[0], spots[2], spots[4]]):
-        answer = true
-        break
-      case row.inaRow([spots[0], spots[3], spots[4]]):
-        answer = true
-        break
-      case row.inaRow([spots[1], spots[2], spots[3]]):
-        answer = true
-        break
-      case row.inaRow([spots[1], spots[2], spots[4]]):
-        answer = true
-        break
-      case row.inaRow([spots[1], spots[3], spots[4]]):
-        answer = true
-        break
-      case row.inaRow([spots[2], spots[3], spots[4]]):
-        answer = true
-        break
-    }
-  }
-  return answer
+const checkPossible = spots => {
+  return possibleCombos.some(e => JSON.stringify(e) === JSON.stringify(spots))
 }
 
-// returns true, expected false
-console.log(checkWin([[0, 0], [0, 1], [1, 2], [2, 0], [2, 2]]))
+// return true or false depending if input spots constitute a 'win'
+const checkWin = spots => {
+  if (spots.length === 3) {
+    return checkPossible(spots)
+  } else if (spots.length === 4) {
+    return (checkPossible([spots[0], spots[1], spots[2]]) ? true :
+      checkPossible([spots[0], spots[1], spots[3]]) ? true :
+        checkPossible([spots[0], spots[2], spots[3]]) ? true :
+          checkPossible([spots[1], spots[2], spots[3]]) ? true : false)
+  } else if (spots.length === 5) {
+    return (checkPossible([spots[0], spots[1], spots[2]]) ? true :
+      checkPossible([spots[0], spots[1], spots[3]]) ? true :
+        checkPossible([spots[0], spots[1], spots[4]]) ? true :
+          checkPossible([spots[0], spots[2], spots[3]]) ? true :
+            checkPossible([spots[0], spots[2], spots[4]]) ? true :
+              checkPossible([spots[0], spots[3], spots[4]]) ? true :
+                checkPossible([spots[1], spots[2], spots[3]]) ? true :
+                  checkPossible([spots[1], spots[2], spots[4]]) ? true :
+                    checkPossible([spots[1], spots[3], spots[4]]) ? true :
+                      checkPossible([spots[2], spots[3], spots[4]]) ? true : false)
+  } else {
+    return false
+  }
+}
 
 module.exports = {
   checkWin
