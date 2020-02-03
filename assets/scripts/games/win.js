@@ -60,6 +60,9 @@ const checkWin = spots => {
   return answer
 }
 
+// returns true, expected false
+console.log(checkWin([[0, 0], [0, 1], [1, 2], [2, 0], [2, 2]]))
+
 module.exports = {
   checkWin
 }
