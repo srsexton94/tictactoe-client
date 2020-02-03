@@ -19,6 +19,7 @@ const onStartGameSuccess = response => {
     $('#gameboard-message').text('').removeClass('success')
     $('#player-panels').removeClass('hidden')
     $('#game-board').removeClass('hidden')
+    $('#game-start').addClass('hidden')
   }, 2500)
 }
 
@@ -55,11 +56,22 @@ const onSelectSquareFailure = response => {
   }, 5000)
 }
 
+const onGetGamesSuccess = response => {
+  // displays game tally upon mouse hover
+  $('#game-tally').text(`Congrats! You've played ${response.games.length} games. Great job, keep playing!`)
+}
+
+const onGetGamesFailure = response => {
+  console.log('failed')
+}
+
 module.exports = {
   onStartGameSuccess,
   onStartGameFailure,
   onSelectSquareSuccess,
-  onSelectSquareFailure
+  onSelectSquareFailure,
+  onGetGamesSuccess,
+  onGetGamesFailure
   // continuePlaying,
   // onWin
 }

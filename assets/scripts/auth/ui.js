@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('./../store.js')
+const gameEvents = require('./../games/events')
 
 const onSignUpSuccess = response => {
   // add success message in signup form
@@ -26,6 +27,8 @@ const onSignUpFailure = response => {
   }, 5000)
 }
 
+// add code to push tally of total games played to #game-tally
+// now in nav bar above game display
 const onSignInSuccess = response => {
   // add success message in signin form
   $('#signin-message').text(`Welcome ${response.user.email}`).addClass('success')

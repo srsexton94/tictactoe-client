@@ -61,7 +61,16 @@ const onSelectSquare = event => {
     .catch(ui.onSelectSquareFailure)
 }
 
+const onGetGames = event => {
+  event.preventDefault() // prevents refresh
+
+  api.getGames()
+    .then(ui.onGetGamesSuccess)
+    .catch(ui.onGetGamesFailure)
+}
+
 module.exports = {
   onStartGame,
-  onSelectSquare
+  onSelectSquare,
+  onGetGames
 }

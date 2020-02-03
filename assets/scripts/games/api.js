@@ -25,7 +25,18 @@ const selectSquare = data => {
   })
 }
 
+const getGames = () => {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   startGame,
-  selectSquare
+  selectSquare,
+  getGames
 }

@@ -13,9 +13,9 @@
     </head>
     <body>
       <section id="auth">
-        <section id="title_page">
+        <section id="title_page" class="title-page">
           <h1>Tic Tac Toe</h1>
-          <article id="Instructions">
+          <article id="instructions" class="instructions">
             <h3>Instructions</h3>
             <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -33,8 +33,6 @@
           <fieldset class='form'>
             <legend>Sign Up:</legend>
             <p id='signup-message'></p>
-            <label>Name: </label>
-              <input type='text' name='name' placeholder='First Last'>
             <label>Email: </label>
               <input type='email' name='credentials[email]' placeholder="name@webaddress.com">
             <label>Password: </label>
@@ -58,34 +56,18 @@
         </form>
       </section>
 
-      <section id="game" class="hidden">
-        <h2>Tic Tac Toe</h2>
-        <nav>
-          <ul>
-            <li><a href="#change-password">Change Password</a></li>
-            <li><a href='#sign-out'>Sign Out</a></li>
-          </ul>
-        </nav>
+      <section id="game" class="game hidden">
+        <header>
+          <h2>Tic Tac Toe</h2>
+          <p id="game-tally" class="tally">Click here for your Game Tally:</p>
+        </header>
 
-        <div id='display'>
+        <div id='display' class="display">
 
           <form id="game-start" class="border form">
             <legend>Let's Play!</legend>
             <input class='submit' type='submit' name='submit' value='START'>
           </form>
-
-          <aside id="player-panels" class="hidden">
-            <div id="playerX" class="player-panel">
-              <h4 id="playerX-name" class="username">Player X</h4>
-              <p id="playerX-games-tally" class="games-tally"></p>
-              <p id="playerX-message"></p>
-            </div>
-            <div id="playerO" class="player-panel">
-              <h4 id="playerO-name" class="username">Player O</h4>
-              <p id="playerO-games-tally" class="games-tally"></p>
-              <p id="playerO-message"></p>
-            </div>
-          </aside>
 
           <main id="game-board" class='container hidden'>
             <p id="gameboard-message"></p>
@@ -105,17 +87,19 @@
                 <li><a id='new-game' href='#'>New Game</a></li>
                 <li><a id='pause' href='#'>Pause Game</a></li>
                 <li><a id='resume' href='#'>Keep Playing</a></li>
-                <li><a id='quit' href='#game-start'>Quit Game</a></li>
               </ul>
             </nav>
           </main>
 
         </div>
+        <section class="bottom">
+          <button id="changepassword-button" type="button">Change Password</button>
 
-        <form id='sign-out'>
-          <p id='signout-message'></p>
-          <input type='submit' class='sign-out' name='signout' value='Sign Out'>
-        </form>
+          <form id='sign-out'>
+            <p id='signout-message'></p>
+            <input type='submit' class='sign-out' name='signout' value='Sign Out'>
+          </form>
+        </section>
       </section>
 
       <form id='change-password' class='border hidden'>

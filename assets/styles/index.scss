@@ -1,7 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
 
+header {
+  display: flex;
+}
+
 h1 {
   font-size: 5em;
+}
+
+h2 {
+  font-size: 3em;
+  text-align: center;
 }
 
 input {
@@ -27,6 +36,30 @@ nav {
   width: 50%;
 }
 
+.bottom {
+  display: flex;
+}
+
+.sign-out {
+  color: red;
+}
+
+.disable {
+  color: gray;
+  pointer-events: none;
+}
+
+.display {
+  display: flex;
+  flex-flow: nowrap row;
+}
+
+.game-disable {
+  background-color: #dddddd;
+  color: gray;
+  pointer-events: none;
+}
+
 .failure {
   background-color: magenta;
 }
@@ -34,8 +67,8 @@ nav {
 .form {
   display: flex;
   flex-flow: nowrap column;
-  text-align: center;
   margin: 5em;
+  text-align: center;
 }
 
 .hidden {
@@ -44,29 +77,21 @@ nav {
 
 .square {
   border: 2px solid;
-  text-align: center;
   height: 7em;
+  text-align: center;
 }
 
-.sign-out {
-  color: red;
-}
 .success {
   background-color: limegreen;
 }
 
-#display {
-  display: flex;
-  flex-flow: nowrap row;
-}
-
-#Instructions {
+.instructions {
   display: block;
   margin: auto;
   width: 50%;
 }
 
-#title_page {
-  text-align: center;
+.title-page {
   margin: 10em;
+  text-align: center;
 }

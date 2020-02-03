@@ -9,6 +9,7 @@ const gameEngine = response => {
   store.user.currentGame.cells = response.game.cells
   // clones the stored current game to use cell array without mutating original
   const gameboard = [...store.user.currentGame.cells]
+  console.log(gameboard)
   // initializes empty array to push chunked subarrays to
   const coordinates = []
 
@@ -32,6 +33,7 @@ const gameEngine = response => {
     }
   }
   // if a player just went and has 3 or more spots chosen, check if they won
+  // How to affect page in each case?  How to indicate draw? End game actions?
   if (xSpots.length > oSpots.length && xSpots.length >= 3) {
     if (win.checkWin(xSpots)) {
       console.log('x wins')
