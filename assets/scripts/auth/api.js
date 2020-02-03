@@ -1,9 +1,7 @@
 'use strict'
 
 const config = require('../config')
-const store = require('../store') // note: nothing is storing here yet!
-
-// remember to double check that form data is compatible with this API!
+const store = require('../store')
 
 // post form data to the API
 const signUp = data => {

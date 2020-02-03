@@ -2,7 +2,21 @@
 
 const store = require('./../store')
 const win = require('./win')
-// const ui = require('./ui')
+
+const gameContinue = () => {
+  // success message
+  $('#gameboard-message').text('Good move!').addClass('success')
+
+  // removes success message after 5 seconds
+  setTimeout(() => {
+    $('#gameboard-message').text('').removeClass('success')
+  }, 1500)
+}
+
+const gameWin = xo => {
+  $('.square').addClass('game-disable')
+  $('#gameboard-message').text(`${xo} wins! Congrats - play again!`).addClass('succes')
+}
 
 const gameEngine = response => {
   // updates stored current game to match API response
@@ -32,17 +46,21 @@ const gameEngine = response => {
       }
     }
   }
-  // if a player just went and has 3 or more spots chosen, check if they won
-  // How to affect page in each case?  How to indicate draw? End game actions?
-  if (xSpots.length > oSpots.length && xSpots.length >= 3) {
+  // if a player just went check if they won
+  if (xSpots.length > oSpots.length) {
     if (win.checkWin(xSpots)) {
-      console.log('x wins')
+      gameWin('X')
+    } else {
+      gameContinue()
     }
-  } else if (oSpots.length === xSpots.length && oSpots.length >= 3) {
+  } else if (oSpots.length === xSpots.length) {
     if (win.checkWin(oSpots)) {
-      console.log('o wins')
+      gameWin('O')
+    } else {
+      gameContinue()
     }
   }
+
 }
 
 module.exports = {

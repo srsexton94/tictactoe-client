@@ -61,13 +61,15 @@ const onSignInFailure = response => {
 
 const onChangePasswordSuccess = response => {
   // add success message in changepassword form
-  $('#changepassword-message').text('Password changed successfully.').addClass('success')
+  $('#changepassword-message').text('Password changed successfully.\nReturning in 5, 4, 3, 2...').addClass('success')
 
   // clears form
   $('#change-password').trigger('reset')
 
   setTimeout(() => {
     $('#changepassword-message').text('').removeClass('success')
+    $('#change-password').addClass('hidden')
+    $('#game').removeClass('hidden')
   }, 5000)
 }
 

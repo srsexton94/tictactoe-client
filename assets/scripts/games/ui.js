@@ -9,7 +9,7 @@ const onStartGameSuccess = response => {
   store.user.games.push(response.game)
 
   // removes any text on game spaces
-  $('.square').text('')
+  $('.square').text('').removeClass('game-disable')
 
   // add success message above gameboard
   $('#gameboard-message').text('Let\'s Play!').addClass('success')
@@ -36,14 +36,6 @@ const onStartGameFailure = response => {
 const onSelectSquareSuccess = response => {
   // calls main game function
   game.gameEngine(response)
-
-  // success message
-  $('#gameboard-message').text('Good move!').addClass('success')
-
-  // removes success message after 5 seconds
-  setTimeout(() => {
-    $('#gameboard-message').text('').removeClass('success')
-  }, 5000)
 }
 
 const onSelectSquareFailure = response => {
