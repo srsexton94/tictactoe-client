@@ -16,6 +16,7 @@ const gameContinue = () => {
 const gameTie = () => {
   $('#gameboard-message').text('It\'s a tie! Please play again').addClass('failure')
   $('.square').addClass('game-disable')
+  $('.endgame').addClass('disable')
 
   setTimeout(() => {
     $('#gameboard-message').text('').removeClass('success')
@@ -25,6 +26,7 @@ const gameTie = () => {
 const gameWin = xo => {
   $('#gameboard-message').text(`${xo} wins! Congrats - play again!`).addClass('success')
   $('.square').addClass('game-disable')
+  $('.endgame').addClass('disable')
 
   setTimeout(() => {
     $('#gameboard-message').text('').removeClass('success')

@@ -10,6 +10,8 @@ const onStartGameSuccess = response => {
 
   // removes any text on game spaces
   $('.square').text('').removeClass('game-disable')
+  $('.paused').removeClass('disable')
+  $('#resume').removeClass('disable')
 
   // add success message above gameboard
   $('#gameboard-message').text('Let\'s Play!').addClass('success')
@@ -17,7 +19,6 @@ const onStartGameSuccess = response => {
   // removes success message after 5 seconds
   setTimeout(() => {
     $('#gameboard-message').text('').removeClass('success')
-    $('#player-panels').removeClass('hidden')
     $('#game-board').removeClass('hidden')
     $('#game-start').addClass('hidden')
   }, 2500)
@@ -50,11 +51,15 @@ const onSelectSquareFailure = response => {
 
 const onGetGamesSuccess = response => {
   // displays game tally upon mouse hover
-  $('#game-tally').text(`Congrats! You've played ${response.games.length} games. Great job, keep playing!`)
+  $('#game-tally').text(`You've played ${response.games.length} games. Great job, keep playing!`)
 }
 
 const onGetGamesFailure = response => {
-  console.log('failed')
+  $('#game-tally').text('Apologies, could not retrieve game tally.').addClass('failure')
+
+  setTimeout(() => {
+    $('#game-tally').text('').removeClass('failure')
+  }, 5000)
 }
 
 module.exports = {
@@ -64,6 +69,4 @@ module.exports = {
   onSelectSquareFailure,
   onGetGamesSuccess,
   onGetGamesFailure
-  // continuePlaying,
-  // onWin
 }
