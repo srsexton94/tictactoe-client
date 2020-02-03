@@ -14,8 +14,12 @@ const gameContinue = () => {
 }
 
 const gameWin = xo => {
+  $('#gameboard-message').text(`${xo} wins! Congrats - play again!`).addClass('success')
   $('.square').addClass('game-disable')
-  $('#gameboard-message').text(`${xo} wins! Congrats - play again!`).addClass('succes')
+
+  setTimeout(() => {
+    $('#gameboard-message').text('').removeClass('success')
+  }, 5000)
 }
 
 const gameEngine = response => {
