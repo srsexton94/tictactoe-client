@@ -12,20 +12,12 @@ const gameContinue = () => {
   }, 1500)
 }
 
-const gameTie = () => {
-  // Displays "tie" message above gameboard
-  $('#gameboard-message').text('It\'s a tie! Please play again').addClass('failure')
-  $('.square').addClass('game-disable') // disables gameboard actions
-  $('.endgame').addClass('disable') // disables action on all but "new game"
-
-  setTimeout(() => { // removes failure message after 8 seconds
-    $('#gameboard-message').text('').removeClass('failure')
-  }, 8000)
-}
-
-const gameWin = xo => {
-  // Displays congratulatory message, identifying winner, above gameboard
-  $('#gameboard-message').text(`${xo} wins! Congrats - play again!`).addClass('success')
+const gameEnd = (winner) => {
+  if (winner) { // if a winner is passed, display success message with winner
+    $('#gameboard-message').text(`${winner} wins! Congrats - play again!`).addClass('success')
+  } else { // if no winner, display message declaring tie
+    $('#gameboard-message').text('It\'s a tie! Please play again').addClass('success')
+  }
   $('.square').addClass('game-disable') // disables gameboard actions
   $('.endgame').addClass('disable') // disables action on all but "new game"
 
@@ -55,11 +47,11 @@ const gameEngine = response => {
   }
 
   if (win.checkWin(xSpots)) { // if X has a winning combo, X wins!
-    gameWin('X')
+    gameEnd('X')
   } else if (win.checkWin(oSpots)) { // if O has a win, O wins!
-    gameWin('O')
+    gameEnd('O')
   } else if (xSpots.length === 5) { // otherwise, if X reaches 5 plays, its a tie
-    gameTie()
+    gameEnd()
   } else { // if no one wins, and its not yet a tie, continue playing!
     gameContinue()
   }

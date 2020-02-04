@@ -2,14 +2,6 @@
 const api = require('./api')
 const ui = require('./ui')
 
-const onStartGame = event => {
-  event.preventDefault() // prevents refresh
-
-  api.startGame() // POSTs a new game to the API
-    .then(ui.onStartGameSuccess)
-    .catch(ui.onStartGameFailure)
-}
-
 let checkTurn = true // declares checker globally so it can be altered by switchPlayers
 
 const switchPlayers = () => {
@@ -21,6 +13,17 @@ const switchPlayers = () => {
   }
   checkTurn = !checkTurn // alternates checker
   return currentValue
+}
+
+const onStartGame = event => {
+  event.preventDefault() // prevents refresh
+
+  api.startGame() // POSTs a new game to the API
+    .then(ui.onStartGameSuccess)
+    .then(() => {
+      checkTurn = true
+    })
+    .catch(ui.onStartGameFailure)
 }
 
 const onSelectSquare = event => {
@@ -73,5 +76,7 @@ const onGetGames = event => {
 module.exports = {
   onStartGame,
   onSelectSquare,
-  onGetGames
+  onGetGames,
+  switchPlayers,
+  checkTurn
 }

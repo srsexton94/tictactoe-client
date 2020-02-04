@@ -2,6 +2,7 @@
 
 const store = require('./../store')
 const game = require('./game-engine')
+// const events = require('./events')
 
 const onStartGameSuccess = response => {
   // pushes current game to User's game array
