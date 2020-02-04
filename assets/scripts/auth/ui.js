@@ -37,7 +37,6 @@ const onSignInSuccess = response => {
   setTimeout(() => {
     $('#signin-message').text('').removeClass('success')
     $('#sign-in').addClass('hidden')
-    $('#auth').addClass('hidden')
     $('#game').removeClass('hidden')
   }, 1000)
 
@@ -93,8 +92,10 @@ const onSignOutSuccess = response => {
   // the game board; in 2 seconds
   setTimeout(() => {
     $('#signout-message').text('').removeClass('success')
-    $('.signout-reveal').removeClass('hidden')
-    $('.signout-hide').addClass('hidden')
+    $('#title-page').removeClass('hidden')
+    $('#game-start').removeClass('hidden')
+    $('#game').addClass('hidden')
+    $('#game-board').addClass('hidden')
   }, 2000)
 
   store.user = null // wipes signed-in users data clean

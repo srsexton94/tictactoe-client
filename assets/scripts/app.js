@@ -13,10 +13,9 @@ $(() => {
   $('#signin-nav').on('click', () => {
     event.preventDefault()
     $('#title-page').addClass('hidden')
-    $('#sign-up').addClass('hidden')
     $('#sign-in').removeClass('hidden')
   })
-  $('#changepassword-button').on('click', () => {
+  $('#changepassword-nav').on('click', () => {
     event.preventDefault()
     $('#change-password').removeClass('hidden')
     $('#game').addClass('hidden')
@@ -32,6 +31,7 @@ $(() => {
   $('#game-start').on('submit', gameEvents.onGetGames)
   $('.square').on('click', gameEvents.onSelectSquare)
   $('#new-game').on('click', gameEvents.onStartGame)
+  $('#new-game').on('click', gameEvents.onGetGames)
   $('#pause').on('click', () => {
     $('.square').addClass('game-disable')
     $('.paused').addClass('disable')
