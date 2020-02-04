@@ -12,8 +12,8 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <section id="auth" class="signin-hide">
-        <section id="title-page" class="title-page">
+      <section id="auth" class="signin-hide signout-reveal">
+        <section id="title-page" class="title-page signout-reveal">
           <h1>Tic Tac Toe</h1>
           <article id="instructions" class="instructions">
             <h3>Instructions</h3>
@@ -29,7 +29,7 @@
           </nav>
         </section>
 
-        <form id='sign-up' class='border hidden'>
+        <form id='sign-up' class='border signout-hide hidden'>
           <fieldset class='form'>
             <legend>Sign Up:</legend>
             <p id='signup-message'></p>
@@ -43,7 +43,7 @@
           </fieldset>
         </form>
 
-        <form id='sign-in' class='border hidden'>
+        <form id='sign-in' class='border signout-hide hidden'>
           <fieldset class='form'>
             <legend>Sign In:</legend>
             <p id='signin-message'></p>
@@ -64,7 +64,7 @@
 
         <div id='display' class="display">
 
-          <form id="game-start" class="game-start border form">
+          <form id="game-start" class="game-start signout-reveal border form">
             <legend>Let's Play!</legend>
             <input class='submit' type='submit' name='submit' value='START'>
           </form>
@@ -102,7 +102,7 @@
         </section>
       </section>
 
-      <form id='change-password' class='border hidden'>
+      <form id='change-password' class='border signout-hide form hidden'>
         <fieldset class='form'>
           <legend>Change Password:</legend>
           <p id='changepassword-message'></p>

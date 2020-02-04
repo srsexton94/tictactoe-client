@@ -93,11 +93,8 @@ const onSignOutSuccess = response => {
   // the game board; in 2 seconds
   setTimeout(() => {
     $('#signout-message').text('').removeClass('success')
-    $('#auth').removeClass('hidden')
-    $('#title-page').removeClass('hidden')
-    $('#game').addClass('hidden')
-    $('#game-board').addClass('hidden')
-    $('form').addClass('hidden')
+    $('.signout-reveal').removeClass('hidden')
+    $('.signout-hide').addClass('hidden')
   }, 2000)
 
   store.user = null // wipes signed-in users data clean
