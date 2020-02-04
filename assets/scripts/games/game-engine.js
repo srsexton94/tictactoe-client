@@ -3,9 +3,9 @@
 const store = require('./../store')
 const win = require('./win')
 
-const gameContinue = () => {
+const gameContinue = (next) => {
   // Adds success message above gameboard
-  $('#gameboard-message').text('Good move!').addClass('success')
+  $('#gameboard-message').text(`Good move! ${next}'s turn next!`).addClass('success')
 
   setTimeout(() => { // removes success message after 5 seconds
     $('#gameboard-message').text('').removeClass('success')
@@ -53,8 +53,10 @@ const gameEngine = response => {
     gameEnd('O')
   } else if (xSpots.length === 5) { // otherwise, if X reaches 5 plays, its a tie
     gameEnd()
-  } else { // if no one wins, and its not yet a tie, continue playing!
-    gameContinue()
+  } else if (xSpots.length > oSpots.length) { // if no one wins, and its not yet a tie, continue playing!
+    gameContinue('O')
+  } else {
+    gameContinue('X')
   }
 }
 
