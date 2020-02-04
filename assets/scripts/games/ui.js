@@ -21,7 +21,7 @@ const onStartGameSuccess = response => {
     $('#gameboard-message').text('').removeClass('success')
     $('#game-board').removeClass('hidden')
     $('#game-start').addClass('hidden')
-  }, 2500)
+  }, 1000)
 }
 
 const onStartGameFailure = response => {

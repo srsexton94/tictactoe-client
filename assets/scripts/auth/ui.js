@@ -89,14 +89,14 @@ const onSignOutSuccess = response => {
   $('#sign-out').trigger('reset') // clears the form
 
   // clears the success message, reveals the signin/up forms, hides the game and
-  // the game board; in 2 seconds
+  // the game board; in 1 second
   setTimeout(() => {
     $('#signout-message').text('').removeClass('success')
     $('#title-page').removeClass('hidden')
     $('#game-start').removeClass('hidden')
     $('#game').addClass('hidden')
     $('#game-board').addClass('hidden')
-  }, 2000)
+  }, 1000)
 
   store.user = null // wipes signed-in users data clean
 }

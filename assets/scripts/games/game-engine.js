@@ -18,12 +18,13 @@ const gameEnd = (winner) => {
   } else { // if no winner, display message declaring tie
     $('#gameboard-message').text('It\'s a tie! Please play again').addClass('success')
   }
+
   $('.square').addClass('game-disable') // disables gameboard actions
   $('.endgame').addClass('disable') // disables action on all but "new game"
 
   setTimeout(() => { // removes success message after 8 seconds
     $('#gameboard-message').text('').removeClass('success')
-  }, 8000)
+  }, 10000)
 }
 
 const gameEngine = response => {
