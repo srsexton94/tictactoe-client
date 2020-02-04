@@ -10,6 +10,8 @@ const onSignUpSuccess = response => {
 
   setTimeout(() => { // removes success message after 5 seconds
     $('#signup-message').text('').removeClass('success')
+    $('#sign-up').addClass('hidden')
+    $('#sign-in').removeClass('hidden')
   }, 5000)
 }
 
@@ -34,6 +36,7 @@ const onSignInSuccess = response => {
   // the game start page; after 1 second
   setTimeout(() => {
     $('#signin-message').text('').removeClass('success')
+    $('#sign-in').addClass('hidden')
     $('#auth').addClass('hidden')
     $('#game').removeClass('hidden')
   }, 1000)
@@ -91,8 +94,10 @@ const onSignOutSuccess = response => {
   setTimeout(() => {
     $('#signout-message').text('').removeClass('success')
     $('#auth').removeClass('hidden')
+    $('#title-page').removeClass('hidden')
     $('#game').addClass('hidden')
     $('#game-board').addClass('hidden')
+    $('form').addClass('hidden')
   }, 2000)
 
   store.user = null // wipes signed-in users data clean

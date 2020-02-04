@@ -4,14 +4,26 @@ const authEvents = require('./auth/events')
 const gameEvents = require('./games/events')
 
 $(() => {
-  // authentication events
-  $('#sign-up').on('submit', authEvents.onSignUp)
-  $('#sign-in').on('submit', authEvents.onSignIn)
+  // navigation events
+  $('#signup-nav').on('click', () => {
+    event.preventDefault()
+    $('#title-page').addClass('hidden')
+    $('#sign-up').removeClass('hidden')
+  })
+  $('#signin-nav').on('click', () => {
+    event.preventDefault()
+    $('#title-page').addClass('hidden')
+    $('#sign-up').addClass('hidden')
+    $('#sign-in').removeClass('hidden')
+  })
   $('#changepassword-button').on('click', () => {
     event.preventDefault()
     $('#change-password').removeClass('hidden')
     $('#game').addClass('hidden')
   })
+  // authentication events
+  $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
 

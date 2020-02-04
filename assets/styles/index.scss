@@ -1,7 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 header {
-  display: flex;
+  text-align: center;
 }
 
 h1 {
@@ -42,6 +42,9 @@ nav {
   display: flex;
 }
 
+.game-start {
+  margin: 0 auto;
+}
 .sign-out {
   color: red;
 }
@@ -79,12 +82,20 @@ nav {
 
 .square {
   align-items: center;
-  border: 2px solid;
   display: flex;
   font-size: 8em;
   height: 20vh;
   justify-content: center;
   text-shadow: 2px 2px purple;
+}
+
+.top {
+  border-bottom: 2px solid black;
+}
+
+.mid {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }
 
 .success {

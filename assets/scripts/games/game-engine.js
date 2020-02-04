@@ -18,9 +18,9 @@ const gameTie = () => {
   $('.square').addClass('game-disable') // disables gameboard actions
   $('.endgame').addClass('disable') // disables action on all but "new game"
 
-  setTimeout(() => { // removes failure message after 5 seconds
+  setTimeout(() => { // removes failure message after 8 seconds
     $('#gameboard-message').text('').removeClass('failure')
-  }, 5000)
+  }, 8000)
 }
 
 const gameWin = xo => {
@@ -29,9 +29,9 @@ const gameWin = xo => {
   $('.square').addClass('game-disable') // disables gameboard actions
   $('.endgame').addClass('disable') // disables action on all but "new game"
 
-  setTimeout(() => { // removes success message after 5 seconds
+  setTimeout(() => { // removes success message after 8 seconds
     $('#gameboard-message').text('').removeClass('success')
-  }, 5000)
+  }, 8000)
 }
 
 const gameEngine = response => {
