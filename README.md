@@ -12,7 +12,8 @@ Individually write a dynamic web app game, which communicates to a provided back
 ### Technology Utilized:
 * HTML5
 * CSS3
-* JavaScript
+* JavaScript (ES6)
+* SASS
 * Bootstrap
 * jQuery
 * AJAX

@@ -1,18 +1,30 @@
 @import '~bootstrap/scss/bootstrap';
 
+$alert: #f00;
+$base: #fff;
+$highlight: #800080;
+$border: 2px solid #000;
+$disable: #888;
+$disable-light: #ddd;
+$success: #32cd32;
+
+body {
+  background: $base;
+}
+
 header {
   text-align: center;
 }
 
 h1 {
-  font-size: 5em;
-  text-shadow: 2px 2px purple;
+  font-size: 6em;
+  text-shadow: 2px 2px $highlight;
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 5em;
   text-align: center;
-  text-shadow: 2px 2px purple;
+  text-shadow: 2px 2px $highlight;
 }
 
 input {
@@ -24,33 +36,44 @@ li {
   padding: 1em;
 }
 
-nav {
-  display: block;
+ul {
+  display: flex;
+  justify-content: center;
   list-style-type: none;
   margin: auto;
 }
 
 .border {
-  border: 200px solid $black;
+  border: $border;
   border-radius: 25%;
-  margin: 25px auto;
+  margin: 50px auto;
   padding: 20px;
   width: 50%;
 }
 
 .bottom {
+  align-items: center;
   display: flex;
+  justify-content: center;
+  margin: auto;
 }
 
-.game-start {
-  margin: 0 auto;
+.button {
+  background-color: $disable-light;
+  border: 0;
+  border-radius: 25%;
+  display: inline-block;
+  margin: auto 5px;
+  text-align: center;
+  text-decoration: none;
 }
+
 .sign-out {
-  color: red;
+  color: $alert;
 }
 
 .disable {
-  color: gray;
+  color: $disable;
   pointer-events: none;
 }
 
@@ -60,19 +83,18 @@ nav {
 }
 
 .game-disable {
-  background-color: #dddddd;
-  color: gray;
+  background-color: $disable-light;
+  color: $disable;
   pointer-events: none;
 }
 
 .failure {
-  background-color: magenta;
+  background-color: $alert;
 }
 
 .form {
   display: flex;
   flex-flow: nowrap column;
-  margin: 5em;
   text-align: center;
 }
 
@@ -86,26 +108,26 @@ nav {
   font-size: 8em;
   height: 20vh;
   justify-content: center;
-  text-shadow: 2px 2px purple;
+  text-shadow: 2px 2px $highlight;
 }
 
 .top {
-  border-bottom: 2px solid black;
+  border-bottom: $border;
 }
 
 .mid {
-  border-left: 2px solid black;
-  border-right: 2px solid black;
+  border-left: $border;
+  border-right: $border;
 }
 
 .success {
-  background-color: limegreen;
+  background-color: $success;
 }
 
 .instructions {
   display: block;
   margin: auto;
-  width: 50%;
+  width: 60%;
 }
 
 .title-page {

@@ -12,7 +12,7 @@ const onSignUpSuccess = response => {
     $('#signup-message').text('').removeClass('success')
     $('#sign-up').addClass('hidden')
     $('#sign-in').removeClass('hidden')
-  }, 5000)
+  }, 1000)
 }
 
 const onSignUpFailure = response => {
