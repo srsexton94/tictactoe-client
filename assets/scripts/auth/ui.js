@@ -1,11 +1,10 @@
 'use strict'
 
 const store = require('./../store.js')
-const gameEvents = require('./../games/events')
 
 const onSignUpSuccess = response => {
   // add success message in signup form
-  $('#signup-message').text(`${response.user.username} successfully signed up`).addClass('success')
+  $('#signup-message').text(`${response.user.email} successfully signed up`).addClass('success')
 
   $('#sign-up').trigger('reset') // clears the form
 
