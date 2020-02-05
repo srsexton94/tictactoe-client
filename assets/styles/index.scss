@@ -23,7 +23,7 @@ h1 {
 }
 
 h2 {
-  font-size: calc($headline * 5/6);
+  font-size: $headline;
   text-align: center;
   text-shadow: $highlight;
 }
@@ -73,8 +73,7 @@ ul {
   text-decoration: none;
 }
 
-// this is non-alphabetic order intentionally, so that it can be over-
-// written by the disable classes when used
+// intentionally non-alphabetic to manipulate cascade effect
 .sign-out {
   color: $alert;
 }
