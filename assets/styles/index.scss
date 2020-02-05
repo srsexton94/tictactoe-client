@@ -1,15 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
 
 $alert: #f00;
-$base: #fff;
-$highlight: #800080;
+$headline: 10vw;
+$highlight: 2px 2px #800080;
 $border: 2px solid #000;
 $disable: #888;
 $disable-light: #ddd;
 $success: #32cd32;
 
 body {
-  background: $base;
+  font-size: calc($headline / 6);
 }
 
 header {
@@ -17,14 +17,19 @@ header {
 }
 
 h1 {
-  font-size: 6em;
-  text-shadow: 2px 2px $highlight;
+  font-size: $headline;
+  text-shadow: $highlight;
+  width: 100%;
 }
 
 h2 {
-  font-size: 5em;
+  font-size: calc($headline * 5/6);
   text-align: center;
-  text-shadow: 2px 2px $highlight;
+  text-shadow: $highlight;
+}
+
+h3 {
+  font-size: calc($headline / 3);
 }
 
 input {
@@ -68,6 +73,8 @@ ul {
   text-decoration: none;
 }
 
+// this is non-alphabetic order intentionally, so that it can be over-
+// written by the disable classes when used
 .sign-out {
   color: $alert;
 }
@@ -82,12 +89,6 @@ ul {
   flex-flow: nowrap row;
 }
 
-.game-disable {
-  background-color: $disable-light;
-  color: $disable;
-  pointer-events: none;
-}
-
 .failure {
   background-color: $alert;
 }
@@ -98,8 +99,20 @@ ul {
   text-align: center;
 }
 
+.game-disable {
+  background-color: $disable-light;
+  color: $disable;
+  pointer-events: none;
+}
+
 .hidden {
   display: none;
+}
+
+.instructions {
+  display: block;
+  margin: auto;
+  width: 70%;
 }
 
 .square {
@@ -108,7 +121,7 @@ ul {
   font-size: 8em;
   height: 20vh;
   justify-content: center;
-  text-shadow: 2px 2px $highlight;
+  text-shadow: $highlight;
 }
 
 .top {
@@ -122,12 +135,6 @@ ul {
 
 .success {
   background-color: $success;
-}
-
-.instructions {
-  display: block;
-  margin: auto;
-  width: 60%;
 }
 
 .title-page {

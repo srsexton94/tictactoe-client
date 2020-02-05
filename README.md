@@ -20,8 +20,8 @@ Individually write a dynamic web app game, which communicates to a provided back
 * Git/GitHub
 
 ### Planning and Development Process:
-The planning process for this project began with detailing user stories and a wireframe.
-* [My Wireframe](https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A1d93b5e2-73e1-4324-a0fe-a2ca2060ac76) helped in visualizing a possible end product, and articularing the visual wireframe in a [written description](https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A9bdd5213-bd20-4aa0-9a6d-ed952558c257) helped articulate necessary components of each view. (To ensure legibility, the wireframe has been transcribed below)
+The planning process for this project began with detailing user stories and a wireframe.  From there, the use of a number of other organizational tools proved immensly helpful and are included below for reference.
+* This project's [Wireframe](https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A1d93b5e2-73e1-4324-a0fe-a2ca2060ac76) helped in visualizing a possible end product. Articulating the visual wireframe in a [written description](https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A9bdd5213-bd20-4aa0-9a6d-ed952558c257) helped detail necessary components of each view. (To ensure legibility, the wireframe has been transcribed below)
     - **View 1: Title Page** visible while unauthenticated
       - Main Title/header
       - Instructions/welcome paragraph
@@ -80,15 +80,17 @@ The planning process for this project began with detailing user stories and a wi
 * The [Event Function List](https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A9387f259-761c-4d90-9695-31e103683d16) further expounds on what actions/events are needed in order to successfully complete a user action, whether or not they involve API requests, and to which planned view they belong.
 * Lastly, a rough [Project Outline](https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A03c9067c-2eaf-46d3-a03c-a66724837c32) helped categorize each of these component tasks into concrete categories, and organized each of the task categories into a logical order of completion.
 
-### Problem Solving & Goals for Future Development:
-Problem solving proved essential for this project's completion.  A particular few of the API requests and the Game Logic provided the most barriers to project development.
+### Problem Solving:
+Problem solving proved essential for this project's completion.  A particular few of the API requests and the Game Logic prompted the most barriers to project development.
 
 A review of this project's git commits, and related descriptions, clearly illustrates prominent issues within the main game logic.  The function gameEngine, which provided the logic for the brunt of the game's functionality, was originally approached with a radically different base structure.  The approach of converting the current game's cells array into a multidimensional array of coordinate pairs was originally intended to offer more reusability of the base code.  The theory followed that the coordinates could be broken into segments based on a provided gameboard size, and therefore be reused for a possble stretch goal of multiple game board sizes.
 
 The contained issues with API requests, both through the game and authentication sections of the provided backend, can likely largely be attributed simply to the developers lack of familiarity with this medium.  However, through thorough research and methodically troubleshooting a number of discrete attempts, a viable product was ultimately produced; and it is this developer's belief that it meets all product specifications as outlined in the project instruction materials.
 
+### Goals for Future Development:
 When expanding this project for future development is is suggested that developers consider adding one or more of the following yet usolved problems:
 * Improving web app visual design for improved user experience
+* Improving styling to offer a more mobile-friendly user experience
 * Adding an option for users to play, at least a round or two, as a "guest" - ie not needing to authenticate an account before playing.
 * Adding a computer bot opponent that randomly assigns space selections to the second player
 * Adding a choice to play on a number of differing boardsizes/difficulty
