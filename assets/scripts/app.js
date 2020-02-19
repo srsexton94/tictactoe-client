@@ -20,6 +20,26 @@ $(() => {
     $('#change-password').removeClass('hidden')
     $('#game').addClass('hidden')
   })
+  $('#signup-to-signin').on('click', () => {
+    event.preventDefault()
+    $('#sign-up').addClass('hidden')
+    $('#sign-in').removeClass('hidden')
+  })
+  $('#signin-to-signup').on('click', () => {
+    event.preventDefault()
+    $('#sign-in').addClass('hidden')
+    $('#sign-up').removeClass('hidden')
+  })
+  $('#signup-home').on('click', () => {
+    event.preventDefault()
+    $('#sign-up').addClass('hidden')
+    $('#title-page').removeClass('hidden')
+  })
+  $('#signin-home').on('click', () => {
+    event.preventDefault()
+    $('#sign-in').addClass('hidden')
+    $('#title-page').removeClass('hidden')
+  })
   // authentication events
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
