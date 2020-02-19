@@ -2,44 +2,19 @@
 
 const authEvents = require('./auth/events')
 const gameEvents = require('./games/events')
+const navEvents = require('./nav/events')
 
 $(() => {
   // navigation events
-  $('#signup-nav').on('click', () => {
-    event.preventDefault()
-    $('#title-page').addClass('hidden')
-    $('#sign-up').removeClass('hidden')
-  })
-  $('#signin-nav').on('click', () => {
-    event.preventDefault()
-    $('#title-page').addClass('hidden')
-    $('#sign-in').removeClass('hidden')
-  })
-  $('#changepassword-nav').on('click', () => {
-    event.preventDefault()
-    $('#change-password').removeClass('hidden')
-    $('#game').addClass('hidden')
-  })
-  $('#signup-to-signin').on('click', () => {
-    event.preventDefault()
-    $('#sign-up').addClass('hidden')
-    $('#sign-in').removeClass('hidden')
-  })
-  $('#signin-to-signup').on('click', () => {
-    event.preventDefault()
-    $('#sign-in').addClass('hidden')
-    $('#sign-up').removeClass('hidden')
-  })
-  $('#signup-home').on('click', () => {
-    event.preventDefault()
-    $('#sign-up').addClass('hidden')
-    $('#title-page').removeClass('hidden')
-  })
-  $('#signin-home').on('click', () => {
-    event.preventDefault()
-    $('#sign-in').addClass('hidden')
-    $('#title-page').removeClass('hidden')
-  })
+  $('#signup-nav').on('click', navEvents.signUpNav)
+  $('#signin-nav').on('click', navEvents.signInNav)
+  $('#changepassword-nav').on('click', navEvents.changePWNav)
+  $('#signup-to-signin').on('click', navEvents.upToIn)
+  $('#signin-to-signup').on('click', navEvents.inToUp)
+  $('#signup-home').on('click', navEvents.signUpHome)
+  $('#signin-home').on('click', navEvents.signInHome)
+  $('#changepassword-return').on('click', navEvents.changePWReturn)
+
   // authentication events
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
