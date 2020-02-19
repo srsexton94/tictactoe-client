@@ -25,23 +25,23 @@ const checkWin = spots => {
   // else if a player has chosen 4 spaces, check all 4 possible combinations
   // return true at the first 'win'
   } else if (spots.length === 4) {
-    return (checkPossible([spots[0], spots[1], spots[2]]) ? true :
-      checkPossible([spots[0], spots[1], spots[3]]) ? true :
-        checkPossible([spots[0], spots[2], spots[3]]) ? true :
-          checkPossible([spots[1], spots[2], spots[3]]) ? true : false)
+    return (checkPossible([spots[0], spots[1], spots[2]]) ||
+            checkPossible([spots[0], spots[1], spots[3]]) ||
+            checkPossible([spots[0], spots[2], spots[3]]) ||
+            checkPossible([spots[1], spots[2], spots[3]]))
   // else if a player has chosen 5 spaces, check all 10 possible combinations
   // return true at the first 'win'
   } else if (spots.length === 5) {
-    return (checkPossible([spots[0], spots[1], spots[2]]) ? true :
-      checkPossible([spots[0], spots[1], spots[3]]) ? true :
-        checkPossible([spots[0], spots[1], spots[4]]) ? true :
-          checkPossible([spots[0], spots[2], spots[3]]) ? true :
-            checkPossible([spots[0], spots[2], spots[4]]) ? true :
-              checkPossible([spots[0], spots[3], spots[4]]) ? true :
-                checkPossible([spots[1], spots[2], spots[3]]) ? true :
-                  checkPossible([spots[1], spots[2], spots[4]]) ? true :
-                    checkPossible([spots[1], spots[3], spots[4]]) ? true :
-                      checkPossible([spots[2], spots[3], spots[4]]) ? true : false)
+    return (checkPossible([spots[0], spots[1], spots[2]]) ||
+            checkPossible([spots[0], spots[1], spots[3]]) ||
+            checkPossible([spots[0], spots[1], spots[4]]) ||
+            checkPossible([spots[0], spots[2], spots[3]]) ||
+            checkPossible([spots[0], spots[2], spots[4]]) ||
+            checkPossible([spots[0], spots[3], spots[4]]) ||
+            checkPossible([spots[1], spots[2], spots[3]]) ||
+            checkPossible([spots[1], spots[2], spots[4]]) ||
+            checkPossible([spots[1], spots[3], spots[4]]) ||
+            checkPossible([spots[2], spots[3], spots[4]]))
   // if a player does not yet have 3, 4, or 5 spaces; return false
   } else {
     return false
