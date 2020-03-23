@@ -46,7 +46,7 @@ const onSignInSuccess = response => {
 }
 
 const onSignInFailure = response => {
-  // add success message in signin form
+  // add failure message in signin form
   $('#signin-message').text('Email or password incorrect, Please try again.').addClass('failure')
 
   $('#sign-in').trigger('reset') // clears the form
