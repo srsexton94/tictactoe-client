@@ -135,6 +135,21 @@ ul {
   display: none;
 }
 
+.loader {
+  animation: spin 2s linear infinite;
+  border: 16px solid $disable-light;
+  border-radius: 50%;
+  border-top: 16px solid $success;
+  height: 5rem;
+  margin: auto;
+  width: 5rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .message {
   border-radius: 10px;
   display: block;

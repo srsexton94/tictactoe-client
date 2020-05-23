@@ -5,6 +5,7 @@ const store = require('../store')
 
 // post form data to the API
 const signUp = data => {
+  $('.loader').removeClass('hidden')
   return $.ajax({
     url: config.apiUrl + '/sign-up',
     method: 'POST',
@@ -14,6 +15,7 @@ const signUp = data => {
 
 // post form data to API, retrieves authentication token
 const signIn = data => {
+  $('.loader').removeClass('hidden')
   return $.ajax({
     url: config.apiUrl + '/sign-in',
     method: 'POST',
@@ -23,6 +25,7 @@ const signIn = data => {
 
 // requiring authentication token, edit portion of API data (password)
 const changePassword = data => {
+  $('.loader').removeClass('hidden')
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
