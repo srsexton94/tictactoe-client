@@ -1,7 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
 
 $alert: #f00;
-$headline: 10vw;
+$headline: 8rem;
 $highlight: 2px 2px #800080;
 $border: 2px solid #000;
 $disable: #888;
@@ -14,12 +14,6 @@ body {
 
 header {
   text-align: center;
-}
-
-h1 {
-  font-size: $headline;
-  text-shadow: $highlight;
-  width: 100%;
 }
 
 h2 {
@@ -51,9 +45,10 @@ ul {
 .border {
   border: $border;
   border-radius: 25%;
+  box-shadow: -1px 2px 1px 2px $disable-light;
   margin: 50px auto;
   padding: 20px;
-  width: 50%;
+  width: 25rem;
 }
 
 .bottom {
@@ -78,6 +73,17 @@ ul {
   color: $alert;
 }
 
+.card {
+  border-radius: 25px;
+  box-shadow: -1px 2px 1px 2px $disable-light;
+  margin: auto;
+  width: 25rem;
+
+  .card-title {
+    font-size: 1.75rem;
+  }
+}
+
 .disable {
   color: $disable;
   pointer-events: none;
@@ -96,6 +102,17 @@ ul {
   display: flex;
   flex-flow: nowrap column;
   text-align: center;
+
+  input {
+    border-radius: 10px;
+  }
+  label {
+    font-weight: bold;
+    margin-top: 8px;
+  }
+  legend {
+    font-size: 2.25rem;
+  }
 }
 
 .game-disable {
@@ -137,4 +154,10 @@ ul {
 .title-page {
   margin: 10%;
   text-align: center;
+
+  h1 {
+    font-size: $headline;
+    text-shadow: $highlight;
+    width: 100%;
+  }
 }

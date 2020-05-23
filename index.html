@@ -4,10 +4,8 @@
       <title>Tic-Tac-Toe Game</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
@@ -15,18 +13,24 @@
       <section id="auth">
         <section id="title-page" class="title-page">
           <h1>Tic Tac Toe</h1>
-          <article id="instructions" class="instructions">
-            <h3>Instructions</h3>
-            <p> Tic Tac Toe, Noughts and Crosses, Xs and Os... more like 1s and 0s! (*baddum*tss*)
-              Your favorite paper and pencil game comes to you in a brand new interface. Sign up for an account
-            and play to your hearts content - sign out and sign back in later to continue the fun!</p>
-          </article>
-          <nav>
-            <ul>
-              <li><a id="signup-nav" href='#sign-up'>Sign Up</a></li>
-              <li><a id="signin-nav" href='#sign-in'>Sign In</a></li>
-            </ul>
-          </nav>
+          <div class="card">
+            <div id="instructions" class="card-body instructions">
+              <h5 class="card-title">Instructions</h5>
+              <h6 class="card-subtitle mb-2 text-muted">
+                Tic Tac Toe, Noughts and Crosses, Xs and Os...
+              </h6>
+              <h6 class="card-subtitle mb-2 text-muted">
+                <em>...more like 1s and 0s! (baddum **tss**)</em>
+              </h6>
+              <p class="card-text">
+                Your favorite paper and pencil game comes to you in a brand new
+                interface. Sign up for an account and play to your hearts content -
+                sign out and sign back in later to continue the fun!
+              </p>
+              <a id="signup-nav" href="#sign-up" class="card-link btn btn-outline-dark btn-sm">Sign Up</a>
+              <a id="signin-nav" href="#sign-in" class="card-link btn btn-outline-dark btn-sm">Sign In</a>
+            </div>
+          </div>
         </section>
 
         <form id='sign-up' class='border hidden'>
@@ -39,7 +43,7 @@
               <input type='password' name='credentials[password]'>
             <label>Confirm Password: </label>
               <input type='password' name='credentials[password_confirmation]'>
-            <input class='submit' type='submit' name='submit' value='Submit'>
+            <input class='submit btn btn-outline-dark' type='submit' name='submit' value='Submit'>
             <a id="signup-to-signin" class="navlink" href="#sign-up">Already have an account? Sign in!</a>
             <a id="signup-home" class="navlink" href="#title-page">Home</a>
           </fieldset>
@@ -53,7 +57,7 @@
               <input type='email' name='credentials[email]' placeholder="name@webaddress.com">
             <label>Password: </label>
               <input type='password' name='credentials[password]'>
-            <input class='submit' type='submit' name='submit' value='Submit'>
+            <input class='submit btn btn-outline-dark' type='submit' name='submit' value='Submit'>
             <a id="signin-to-signup" class="navlink" href="#sign-up">Don't have an account? Sign up!</a>
             <a id="signin-home" class="navlink" href="#title-page">Home</a>
           </fieldset>
