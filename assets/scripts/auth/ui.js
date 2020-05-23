@@ -86,7 +86,7 @@ const onSignOutSuccess = response => {
   // add success message in signout form
   $('#signout-message').text(`Goodbye!`).addClass('success')
 
-  $('#sign-out').trigger('reset') // clears the form
+  // $('#sign-out').trigger('reset') // clears the form
 
   // clears the success message, reveals the signin/up forms, hides the game and
   // the game board; in 1 second
@@ -105,7 +105,7 @@ const onSignOutFailure = response => {
   // add success message in signout form
   $('#signout-message').text('Alert: Account still signed in.').addClass('failure')
 
-  $('#sign-out').trigger('reset') // clears the form
+  // $('#sign-out').trigger('reset') // clears the form
 
   setTimeout(() => { // clears the failure message after 5 seconds
     $('#signout-message').text('').removeClass('failure')
