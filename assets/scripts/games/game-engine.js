@@ -5,10 +5,15 @@ const win = require('./win')
 
 const endGameImage = winner => {
   if (winner) {
+    const rando = Math.floor(Math.random() * 10) + 1
+    const randomImage = `url('../../public/winner/${rando}.jpg')`
     $('.endgame-img').removeClass('hidden')
+    $('.endgame-img').css('background-image', randomImage)
     $('.endgame-img h3').text(`Player ${winner} wins!`)
   } else {
-    $('#gameboard-message').text('It\'s a tie! Please play again').addClass('success')
+    $('.endgame-img').removeClass('hidden')
+    $('.endgame-img').css('background-image', "url('../../public/tie.jpg')")
+    $('.endgame-img h3').text('It\'s a tie!')
   }
 }
 
