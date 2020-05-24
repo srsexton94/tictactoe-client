@@ -1,6 +1,6 @@
 # TicTacToe
 
-![]('./public/new_gameboard.png')
+![]('public/new_gameboard.png')
 
 ## Objective:
 Individually write a dynamic web app game, which communicates to a provided backend, to someone else's specifications:
@@ -23,7 +23,7 @@ Individually write a dynamic web app game, which communicates to a provided back
 
 ### Planning and Development Process:
 The planning process for this project began with detailing user stories and a wireframe.  From there, the use of a number of other organizational tools proved immensly helpful and are included below for reference.
-![]('./public/wireframes.png')
+![]('public/wireframes.png')
 * This project's [Wireframe](https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A1d93b5e2-73e1-4324-a0fe-a2ca2060ac76) helped in visualizing a possible end product. Articulating the visual wireframe in a [handwritten description](https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A9bdd5213-bd20-4aa0-9a6d-ed952558c257) helped detail necessary components of each view. (For legibility, the wireframe description has been transcribed below)
     - **View 1: Title Page** visible while unauthenticated
       - Main Title/header
@@ -80,13 +80,13 @@ The planning process for this project began with detailing user stories and a wi
   1. As a fellow programmer, I want to play alongside examining your code (such as through developer tools or github) so that I can get ideas or find solutions for a similar project or make suggestions/help improve yours.
   1. As a class instructor or other professional, I want to examine your code and end product so that I can assess how well you met the project requirements and understand your development as a coder.
 
-![]('./public/flowchart.png')
+![]('public/flowchart.png')
 * From there a [flow chart](https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A8568f70c-70b5-4084-b8cf-f0fb55046fe7) of each possible user action (detailing which events, and their types) offered a more explicit plan of attack and more assurance of completion.
 
-![]('./public/eventfunclist.png')
+![]('public/eventfunclist.png')
 * The [Event Function List](https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A9387f259-761c-4d90-9695-31e103683d16) further expounds on what actions/events are needed in order to successfully complete a user action, whether or not they involve API requests, and to which planned view they belong.
 
-![]('./public/outline.png')
+![]('public/outline.png')
 * Lastly, a rough [Project Outline](https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A03c9067c-2eaf-46d3-a03c-a66724837c32) helped categorize each of these component tasks into concrete categories, and organized each of the task categories into a logical order of completion.
 
 ### Problem Solving:
@@ -108,7 +108,7 @@ When expanding this project for future development is is suggested that develope
 
 ### UI Improvements
 As the very first development project for this developer's Software Engineering career, the initial rendition left some to be desired especially in terms of UI and overall design.  At the programs culmination, this project was revisited to improve such.  These photos demonstrate the improvements made in this round of edits.
-![]('./public/old_title.png')
-![]('./public/old_gameboard.png')
-![]('./public/new_title.png')
-![]('./public/new_gameboard.png')
+![]('public/old_title.png')
+![]('public/old_gameboard.png')
+![]('public/new_title.png')
+![]('public/new_gameboard.png')
