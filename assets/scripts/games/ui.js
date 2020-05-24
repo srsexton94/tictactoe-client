@@ -14,6 +14,9 @@ const onStartGameSuccess = response => {
   $('.paused').removeClass('disable')
   $('#resume').removeClass('disable')
 
+  // if displayed, hide the end game image
+  $('.endgame-img').addClass('hidden')
+
   // adds success message above gameboard
   $('#gameboard-message').text('Let\'s Play!').addClass('success')
 
@@ -25,6 +28,9 @@ const onStartGameSuccess = response => {
 }
 
 const onStartGameFailure = response => {
+  // if displayed, hide the end game image
+  $('.endgame-img').addClass('hidden')
+
   // adds failure message above gameboard
   $('#gameboard-message').text('Our Apologies, that didn\'t work. Please Try again.').addClass('failure')
 

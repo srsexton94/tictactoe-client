@@ -3,7 +3,16 @@
 const store = require('./../store')
 const win = require('./win')
 
-const gameContinue = (next) => {
+const endGameImage = winner => {
+  if (winner) {
+    $('.endgame-img').removeClass('hidden')
+    $('.endgame-img h3').text(`Player ${winner} wins!`)
+  } else {
+    $('#gameboard-message').text('It\'s a tie! Please play again').addClass('success')
+  }
+}
+
+const gameContinue = next => {
   // Adds success message above gameboard
   $('#gameboard-message').text(`Good move! ${next}'s turn next!`).addClass('success')
 
@@ -12,12 +21,8 @@ const gameContinue = (next) => {
   }, 1500)
 }
 
-const gameEnd = (winner) => {
-  if (winner) { // if a winner is passed, display success message with winner
-    $('#gameboard-message').text(`${winner} wins! Congrats - play again!`).addClass('success')
-  } else { // if no winner, display message declaring tie
-    $('#gameboard-message').text('It\'s a tie! Please play again').addClass('success')
-  }
+const gameEnd = winner => {
+  endGameImage(winner)
 
   $('.square').addClass('game-disable') // disables gameboard actions
   $('.endgame').addClass('disable') // disables action on all but "new game"

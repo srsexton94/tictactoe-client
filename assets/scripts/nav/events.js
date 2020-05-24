@@ -13,6 +13,8 @@ const signInNav = () => {
 const changePWNav = () => {
   event.preventDefault()
   $('#game').addClass('hidden')
+  // if displayed, hide the end game image
+  $('.endgame-img').addClass('hidden')
   $('#change-password').removeClass('hidden')
 }
 const upToIn = () => {

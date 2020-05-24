@@ -2,7 +2,8 @@
 
 $alert: rgba(212, 90, 226, 0.9);
 $success: rgba(61, 225, 208, 0.88);
-$mediary: rgba(214, 189, 0, .85);
+$mediary: rgb(214, 189, 0);
+$body: #343434;
 $headline: 8rem;
 $highlight: 2px 2px $success;
 $border: 2px solid #000;
@@ -13,7 +14,7 @@ body {
   background: url('../../public/desk.jpg') no-repeat center center scroll;
   background-color: #fff;
   background-size: cover;
-  color: #343434;
+  color: $body;
   height: 100vh;
   font-size: calc($headline / 6);
 }
@@ -84,6 +85,10 @@ ul {
     font-size: 2rem;
     text-shadow: 1px 2px $alert;
   }
+
+  .card-text {
+    text-align: left;
+  }
 }
 
 .disable {
@@ -122,7 +127,7 @@ ul {
 }
 
 .game-board {
-  max-width: 45rem;
+  max-width: 35rem;
 }
 
 .game-disable {
@@ -192,6 +197,28 @@ ul {
     font-size: $headline;
     text-shadow: $highlight;
     width: 100%;
+  }
+}
+
+.endgame-img {
+  background: url('../../public/winner/10.jpg') no-repeat center center scroll;
+  background-color: $disable;
+  background-size: cover;
+  color: $mediary;
+  height: 25rem;
+  margin-left: -3rem;
+  max-width: 50rem;
+  min-width: 40rem;
+  position: absolute;
+  text-align: center;
+  z-index: 1;
+
+  h3 {
+    background-color: $body;
+    font-size: 4em;
+    margin: auto;
+    margin-top: 20rem;
+    width: 30rem;
   }
 }
 

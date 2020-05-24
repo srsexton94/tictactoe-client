@@ -10,7 +10,7 @@ const onSignUpSuccess = response => {
 
   $('#sign-up').trigger('reset') // clears the form
 
-  setTimeout(() => { // removes success message after 5 seconds
+  setTimeout(() => { // removes success message after 1 second
     $('#signup-message').text('').removeClass('success')
     $('#sign-up').addClass('hidden')
     $('#sign-in').removeClass('hidden')
@@ -25,7 +25,7 @@ const onSignUpFailure = response => {
 
   $('#sign-up').trigger('reset') // clears the form
 
-  setTimeout(() => { // removes failure message after 5 seconds
+  setTimeout(() => { // removes failure message after 3 seconds
     $('#signup-message').text('').removeClass('failure')
   }, 3000)
 }
@@ -39,7 +39,7 @@ const onSignInSuccess = response => {
   $('#sign-in').trigger('reset') // clears the form
 
   // removes success message, hides the signin/up forms, and reveals
-  // the game start page; after 1 second
+  // the game start page; after 1.5 seconds
   setTimeout(() => {
     $('#signin-message').text('').removeClass('success')
     $('#sign-in').addClass('hidden')
@@ -89,7 +89,7 @@ const onChangePasswordFailure = response => {
 
   $('#change-password').trigger('reset') // clears the form
 
-  setTimeout(() => { // removes failure message after 5 seconds
+  setTimeout(() => { // removes failure message after 3 seconds
     $('#changepassword-message').text('').removeClass('failure')
   }, 3000)
 }
@@ -97,8 +97,6 @@ const onChangePasswordFailure = response => {
 const onSignOutSuccess = response => {
   // add success message in signout form
   $('#signout-message').text(`Goodbye!`).addClass('success')
-
-  // $('#sign-out').trigger('reset') // clears the form
 
   // clears the success message, reveals the signin/up forms, hides the game and
   // the game board; in 1 second
@@ -108,6 +106,8 @@ const onSignOutSuccess = response => {
     $('#game-start').removeClass('hidden')
     $('#game').addClass('hidden')
     $('#game-board').addClass('hidden')
+    // if displayed, hide the end game image
+    $('.endgame-img').addClass('hidden')
   }, 1000)
 
   store.user = null // wipes signed-in users data clean
@@ -117,9 +117,10 @@ const onSignOutFailure = response => {
   // add success message in signout form
   $('#signout-message').text('Alert: Account still signed in.').addClass('failure')
 
-  // $('#sign-out').trigger('reset') // clears the form
+  // if displayed, hide the end game image
+  $('.endgame-img').addClass('hidden')
 
-  setTimeout(() => { // clears the failure message after 5 seconds
+  setTimeout(() => { // clears the failure message after 3 seconds
     $('#signout-message').text('').removeClass('failure')
   }, 3000)
 }
