@@ -29,11 +29,12 @@ $(() => {
   $('#new-game').on('click', gameEvents.onStartGame)
   $('#new-game').on('click', gameEvents.onGetGames)
   $('#pause').on('click', () => {
-    $('.square').addClass('game-disable')
-    $('.paused').addClass('disable')
-  })
-  $('#resume').on('click', () => {
-    $('.square').removeClass('game-disable')
-    $('.paused').removeClass('disable')
+    if ($('#pause').text() === 'Pause Game') {
+      $('#pause').text('Keep Playing')
+    } else {
+      $('#pause').text('Pause Game')
+    }
+    $('.square').toggleClass('game-disable')
+    $('#new-game').toggleClass('disable')
   })
 })
