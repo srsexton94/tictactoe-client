@@ -1,6 +1,7 @@
 'use strict'
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store')
 
 let checkTurn = true // declares checker globally so it can be altered by switchPlayers
 
@@ -19,9 +20,13 @@ const onStartGame = event => {
   event.preventDefault() // prevents refresh
 
   api.startGame() // POSTs a new game to the API
-    .then(ui.onStartGameSuccess)
-    .then(() => {
+    .then((res) => {
+      ui.onStartGameSuccess(res)
+      return res
+    })
+    .then((res) => {
       checkTurn = true
+      store.user.currentGame.id = res.game._id
     })
     .catch(ui.onStartGameFailure)
 }
