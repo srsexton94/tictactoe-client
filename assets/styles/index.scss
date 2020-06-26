@@ -4,7 +4,7 @@ $alert: rgba(212, 90, 226, 0.9);
 $success: rgba(61, 225, 208, 0.88);
 $mediary: rgb(214, 189, 0);
 $body: #343434;
-$headline: 8rem;
+$headline: 7rem;
 $highlight: 2px 2px $success;
 $border: 2px solid #000;
 $disable: #888;
@@ -15,7 +15,7 @@ body {
   background-color: #fff;
   background-size: cover;
   color: $body;
-  height: 100vh;
+  height: 105vh;
   font-size: calc($headline / 6);
 }
 
