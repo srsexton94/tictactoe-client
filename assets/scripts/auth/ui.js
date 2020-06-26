@@ -64,6 +64,23 @@ const onSignInFailure = response => {
   }, 3000)
 }
 
+const onGuestSignInSuccess = response => {
+  $('.loader').addClass('hidden') // hide loader image
+  console.log('welcome guest!')
+  $('#auth').addClass('hidden')
+  $('#game').removeClass('hidden')
+  $('#changepassword-nav').addClass('hidden')
+  $('#auth-navbox').removeClass('hidden')
+  // stores the response data in 'store.js' to access authentication token later
+  store.user = response.user
+  store.user.games = []
+}
+
+const onGuestSignInFailure = response => {
+  $('.loader').addClass('hidden') // hide loader image
+  $('#auth-navbox').removeClass('hidden') // reveals auth options
+}
+
 const onChangePasswordSuccess = response => {
   // hide loader image
   $('.loader').addClass('hidden')
@@ -104,6 +121,8 @@ const onSignOutSuccess = response => {
     $('#signout-message').text('').removeClass('success')
     $('#title-page').removeClass('hidden')
     $('#game-start').removeClass('hidden')
+    $('#changepassword-nav').removeClass('hidden')
+    $('#auth').removeClass('hidden')
     $('#game').addClass('hidden')
     $('#game-board').addClass('hidden')
     // if displayed, hide the end game image
@@ -130,6 +149,8 @@ module.exports = {
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,
+  onGuestSignInSuccess,
+  onGuestSignInFailure,
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutSuccess,

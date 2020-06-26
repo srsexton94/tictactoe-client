@@ -25,6 +25,19 @@ const onSignIn = event => { // the following all mirror previous comments
     .catch(ui.onSignInFailure)
 }
 
+const onGuestSignIn = () => {
+  const data = {
+    'credentials': {
+      'email': 'guest@email.com',
+      'password': 'guest'
+    }
+  }
+
+  api.guestSignIn(data)
+    .then(ui.onGuestSignInSuccess)
+    .catch(ui.onGuestSignInFailure)
+}
+
 const onChangePassword = event => {
   event.preventDefault()
 
@@ -47,6 +60,7 @@ const onSignOut = event => {
 module.exports = {
   onSignUp,
   onSignIn,
+  onGuestSignIn,
   onChangePassword,
   onSignOut
 }

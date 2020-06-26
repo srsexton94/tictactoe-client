@@ -18,6 +18,7 @@ $(() => {
   // authentication events
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#guest-signin').on('click', authEvents.onGuestSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('.sign-out').on('click', authEvents.onSignOut)
 
