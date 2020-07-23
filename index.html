@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic-Tac-Toe Game</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <section id="auth">
+        <section id="title-page" class="title-page">
+          <h1>Tic Tac Toe</h1>
+          <div class="card">
+            <div id="instructions" class="card-body instructions">
+              <h5 class="card-title">Instructions</h5>
+              <h6 class="card-subtitle mb-2 text-muted">
+                Tic Tac Toe, Noughts and Crosses, Xs and Os...
+              </h6>
+              <h6 class="card-subtitle mb-2 text-muted">
+                <em>...more like 1s and 0s! (baddum **tss**)</em>
+              </h6>
+              <p class="card-text">
+                Your favorite paper and pencil game comes to you in a brand new
+                interface. Play as a guest to enjoy to your hearts content right
+                now - OR sign up for an account to continue the fun every day!
+              </p>
+              <div class="loader hidden"></div>
+              <section id="auth-navbox">
+                <a id="guest-signin" href="#" class="card-link btn btn-outline-info">Play as a guest!</a>
+                <p style="margin:.5rem;">Or...</p>
+                <a id="signup-nav" href="#sign-up" class="card-link btn btn-outline-dark">Sign Up</a>
+                <a id="signin-nav" href="#sign-in" class="card-link btn btn-outline-dark">Sign In</a>
+                <p style="font-size:.45rem;" class="mt-2">Disclaimer: this app
+                  is just for fun - to be safe use a fake email!
+                </p>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <form id='sign-up' class='border hidden'>
+          <fieldset class='form'>
+            <legend>Sign Up:</legend>
+            <p id='signup-message' class="auth-message"></p>
+            <div class="loader hidden"></div>
+            <label>Email: </label>
+              <input type='email' name='credentials[email]' placeholder="name@webaddress.com">
+            <label>Password: </label>
+              <input type='password' name='credentials[password]'>
+            <label>Confirm Password: </label>
+              <input type='password' name='credentials[password_confirmation]'>
+            <input class='submit btn btn-outline-dark' type='submit' name='submit' value='Submit'>
+            <a id="signup-to-signin" class="navlink" href="#sign-up">Already have an account? Sign in!</a>
+            <a id="signup-home" class="navlink" href="#title-page">Home</a>
+          </fieldset>
+        </form>
+
+        <form id='sign-in' class='border hidden'>
+          <fieldset class='form'>
+            <legend>Sign In:</legend>
+            <p id='signin-message' class="auth-message"></p>
+            <div class="loader hidden"></div>
+            <label>Email: </label>
+              <input type='email' name='credentials[email]' placeholder="name@webaddress.com">
+            <label>Password: </label>
+              <input type='password' name='credentials[password]'>
+            <input class='submit btn btn-outline-dark' type='submit' name='submit' value='Submit'>
+            <a id="signin-to-signup" class="navlink" href="#sign-up">Don't have an account? Sign up!</a>
+            <a id="signin-home" class="navlink" href="#title-page">Home</a>
+          </fieldset>
+        </form>
+      </section>
+
+      <section id="game" class="game hidden">
+        <header>
+          <h2>Tic Tac Toe</h2>
+          <p id="game-tally" class="tally"></p>
+        </header>
+
+        <div id='display' class="display">
+
+          <form id="game-start" class="game-start border form">
+            <legend>Let's Play!</legend>
+            <input class='submit btn btn-outline-info btn-lg' type='submit' name='submit' value='START'>
+          </form>
+
+          <main id="game-board" class='game-board container hidden'>
+            <p id="gameboard-message" class="message"></p>
+            <div class="endgame-img hidden">
+              <h3></h3>
+              </div>
+            <div class='row'>
+              <div id='0' class='col-4 square top'></div>
+              <div id='1' class='col-4 square top mid'></div>
+              <div id='2' class='col-4 square top'></div>
+              <div id='3' class='col-4 square top'></div>
+              <div id='4' class='col-4 square top mid'></div>
+              <div id='5' class='col-4 square top'></div>
+              <div id='6' class='col-4 square'></div>
+              <div id='7' class='col-4 square mid'></div>
+              <div id='8' class='col-4 square'></div>
+            </div>
+            <nav id='#game-admin'>
+              <ul>
+                <li><a id='new-game' class="paused" href='#'>New Game</a></li>
+                <li><a id='pause' class="paused endgame" href='#'>Pause Game</a></li>
+              </ul>
+            </nav>
+          </main>
+
+        </div>
+
+        <section class="bottom">
+          <button id="changepassword-nav" class="btn btn-outline-dark btn-sm" type="button">Change Password</button>
+
+          <button class='sign-out btn btn-outline-danger btn-sm'>Sign Out</button>
+        </section>
+        <p id='signout-message'></p>
+
+      </section>
+
+      <form id='change-password' class='border form hidden'>
+        <fieldset class='form'>
+          <legend>Change Password:</legend>
+          <p id='changepassword-message'></p>
+          <div class="loader hidden"></div>
+            <label>Old Password: </label>
+              <input type='password' name='passwords[old]'>
+            <label>New Password: </label>
+              <input type='password' name='passwords[new]'>
+          <input class='submit btn btn-outline-dark' type='submit' name='submit' value='Submit'>
+          <a id="changepassword-return" class="navlink" href="#gameboard">Home</a>
+        </fieldset>
+      </form>
+
+    </body>
+</html>
