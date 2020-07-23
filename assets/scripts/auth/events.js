@@ -28,7 +28,7 @@ const onSignIn = event => { // the following all mirror previous comments
 const onGuestSignIn = () => {
   const data = {
     'credentials': {
-      'email': 'guest@email.com',
+      'email': 'guest-player@email.com',
       'password': 'zowpt7rv4fj'
     }
   }
